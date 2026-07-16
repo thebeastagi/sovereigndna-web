@@ -22,3 +22,13 @@ not_found_handling = "single-page-application"
 [[kv_namespaces]]
 binding = "SOVDNA_KV"
 id = "16ecad3d5d8b4fb3b327ece7d9db84ca"
+
+# Service binding → the dashboard worker's PUBLIC AllScale create-intent handler.
+# Same-zone Worker→Worker calls over public fetch() are blocked (loopback 522),
+# so we invoke the dashboard worker directly via this binding. This keeps the
+# ALLSCALE_* secrets entirely inside the dashboard worker (no duplication here)
+# and requires NO changes to the dashboard. Used only if this worker doesn't
+# hold its own ALLSCALE_* creds.
+[[services]]
+binding = "DASH"
+service = "beast-infra-dashboard"
