@@ -1,0 +1,18 @@
+{
+  "name": "sovereigndna-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "description": "End-to-end Playwright test suite for the SovereignDNA web app (live).",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium-desktop",
+    "test:mobile": "playwright test --project=mobile-chromium",
+    "report": "playwright show-report",
+    "cleanup": "node utils/cleanup-waitlist.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.1",
+    "@axe-core/playwright": "4.11.0"
+  }
+}
