@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SovereignDNA — Your genome, your device</title>
+<meta name="description" content="SovereignDNA is a local-first, privacy-preserving DNA agent workbench. Import your genome once, keep raw DNA on your own device, and run verified analysis skills — no cloud, no telemetry. Built with The Beast." />
+<meta name="theme-color" content="#06070d" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<meta property="og:title" content="SovereignDNA — Your genome, your device" />
+<meta property="og:description" content="A local-first, privacy-preserving DNA agent workbench. Raw DNA never leaves your device." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://sovereigndna.thebeastagi.com/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="SovereignDNA home">
+      <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <defs><linearGradient id="g" x1="0" y1="0" x2="32" y2="32">
+          <stop offset="0" stop-color="#33e3c6"/><stop offset=".55" stop-color="#6d7cff"/><stop offset="1" stop-color="#b16cff"/>
+        </linearGradient></defs>
+        <path d="M9 3c0 6 14 8 14 13S9 23 9 29" stroke="url(#g)" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M23 3c0 6-14 8-14 13s14 7 14 13" stroke="url(#g)" stroke-width="2.4" stroke-linecap="round" opacity=".55"/>
+        <path d="M10.5 8h11M9.7 13h12.6M9.7 19h12.6M10.5 24h11" stroke="url(#g)" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <span>SovereignDNA<small>by The Beast</small></span>
+    </a>
+    <nav class="nav-links" id="navlinks" aria-label="Primary">
+      <a href="#platform">Platform</a>
+      <a href="#demo">Live demo</a>
+      <a href="#phase1">Phase 1</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#roadmap">Roadmap</a>
+    </nav>
+    <a class="btn btn-primary btn-sm nav-cta" href="#waitlist">Join the waitlist</a>
+    <button class="nav-burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Local-first genomics · $80K $BEAST grant</span>
+      <h1>Your genome,<br><span class="grad-text">your device.</span></h1>
+      <p class="sub">SovereignDNA is a local-first DNA agent workbench. Import your genome once, keep raw DNA on your own machine, and run verified analysis skills and research agents — without surrendering your genome to a cloud.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#demo">Watch it ingest live ↓</a>
+        <a class="btn btn-ghost" href="#waitlist">Join the waitlist</a>
+      </div>
+      <div class="trust" role="list">
+        <span role="listitem"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>No telemetry</span>
+        <span role="listitem"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>Raw DNA never leaves your device</span>
+        <span role="listitem"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>MIT open source</span>
+      </div>
+    </div>
+    <div class="helix-stage">
+      <canvas id="helix" aria-hidden="true"></canvas>
+      <div class="status-chip" id="statusChip" title="Live from /api/status">
+        <span class="dot"></span><span id="statusText">connecting…</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PLATFORM PILLARS ══ -->
+<section id="platform">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The platform</span>
+      <h2>A sovereign workbench for the most personal data you own.</h2>
+      <p>Millions of people have a genome export and almost no trustworthy local tooling. SovereignDNA turns that file into a private, agent-driven workbench — computation stays on your device by default.</p>
+    </div>
+    <div class="pillars">
+      <div class="card reveal">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
+        <h3>Local-first</h3>
+        <p>A Tauri + Rust desktop app with a local SQLite store. Your raw genome is imported once and never uploaded.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 3 4 8 4-8M4 15l4-4M20 15l-4-4M6 21h12"/></svg></div>
+        <h3>Skills runtime</h3>
+        <p>Signed, sandboxed analysis skills with evidence tiers and citations — health-risk, pharmacogenomics, traits, carrier status.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div>
+        <h3>Research agents</h3>
+        <p>Personal agents that watch PubMed and ClinVar for your variants and rerun scores when reference data changes.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Privacy ledger</h3>
+        <p>Every outbound action is logged: which public rsIDs or reference queries left the device, where they went, and why.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LIVE DEMO ══ -->
+<section id="demo" class="demo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Live backend demo · Phase 1.1 shipped</span>
+      <h2>Streaming ingestion, in real time.</h2>
+      <p>Whole-genome files run 1–100+ GB. The old importer loaded the entire file into RAM. We rebuilt it as a constant-memory stream: file → parser → SQLite, in bounded batches. Run it below — the payload streams live from this site's Cloudflare Worker.</p>
+    </div>
+    <div class="demo-panel reveal">
+      <div class="demo-controls">
+        <div class="field">
+          <label>Source format</label>
+          <div class="seg" id="fmtSeg" role="group" aria-label="Source format">
+            <button data-fmt="23andMe" aria-pressed="true">23andMe</button>
+            <button data-fmt="AncestryDNA" aria-pressed="false">AncestryDNA</button>
+            <button data-fmt="VCF" aria-pressed="false">VCF</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="sizeRange">Genome size · <span class="range-val" id="sizeVal">650,000 variants</span></label>
+          <input type="range" id="sizeRange" min="100000" max="3000000" step="50000" value="650000" />
+        </div>
+        <button class="btn btn-primary" id="runBtn">▶ Run ingestion</button>
+      </div>
+
+      <div class="progress-track"><div class="progress-fill" id="progFill"></div></div>
+      <div class="demo-meta">
+        <span>Reading <span class="chr-pill" id="chrNow">chr—</span> · <span id="rateNow">idle</span></span>
+        <span id="pctNow" class="mono">0.0%</span>
+      </div>
+
+      <div class="demo-stats" aria-live="polite">
+        <div class="stat"><div class="k">Variants parsed</div><div class="v" id="stVariants">0</div><small>streamed to SQLite</small></div>
+        <div class="stat"><div class="k">Data processed</div><div class="v" id="stBytes">0 B</div><small>read as a stream</small></div>
+        <div class="stat"><div class="k">Batches flushed</div><div class="v" id="stBatches">0</div><small>50k-row transactions</small></div>
+        <div class="stat flat"><div class="k">Peak RAM</div><div class="v" id="stMem">— MB</div><small>flat — the whole point</small></div>
+      </div>
+
+      <div class="mem-viz">
+        <div class="mem-row"><span class="lbl">Naïve read_to_string</span><span class="mem-bar naive"><i id="memNaive" style="width:4%"></i></span><span class="val" id="memNaiveV">—</span></div>
+        <div class="mem-row"><span class="lbl">Streaming (ours)</span><span class="mem-bar stream"><i id="memStream" style="width:4%"></i></span><span class="val" id="memStreamV">—</span></div>
+      </div>
+
+      <div class="demo-note" id="demoNote"><strong>Ready.</strong> Pick a format and size, then run. Notice the naïve importer's memory scales with the file while ours stays flat — that's what makes whole-genome VCFs viable on a laptop.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PHASE 1 ══ -->
+<section id="phase1">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Phase 1 · Universal formats</span>
+      <h2>Real, reviewable progress — not a roadmap slide.</h2>
+      <p>The grant's first tranche is underway. Phase 1.1 (streaming ingestion core) shipped as a green, reviewable pull request against the public repo.</p>
+    </div>
+    <div class="phase-grid">
+      <div class="list-card reveal">
+        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--helix-1)" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Shipped</h3>
+        <ul class="chk" id="shippedList"><li class="done">Loading…</li></ul>
+        <div class="pr-row" id="prRow"></div>
+      </div>
+      <div class="list-card reveal">
+        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Next up</h3>
+        <ul class="chk" id="nextList"><li class="next">Loading…</li></ul>
+      </div>
+    </div>
+    <pre class="code reveal"><span class="cm">// The streaming contract every parser now implements</span>
+<span class="kw">pub trait</span> <span class="ty">GenomeParser</span> {
+    <span class="kw">fn</span> <span class="fn">parse_streaming</span>(
+        &<span class="kw">self</span>,
+        reader: &<span class="kw">mut dyn</span> <span class="ty">BufRead</span>,   <span class="cm">// 256 KiB buffered — never the whole file</span>
+        sink:   &<span class="kw">mut dyn</span> <span class="ty">SnpSink</span>,   <span class="cm">// each variant emitted as it is read</span>
+    ) -> <span class="ty">Result</span>&lt;<span class="ty">ParseSummary</span>&gt;;
+}
+
+<span class="cm">// commands::import streams straight into SQLite in bounded batches</span>
+<span class="kw">let mut</span> sink = <span class="ty">DbBatchSink</span>::<span class="fn">new</span>(&tx, <span class="ty">50_000</span>);  <span class="cm">// rollback on parse error</span>
+parser.<span class="fn">parse_streaming</span>(&<span class="kw">mut</span> reader, &<span class="kw">mut</span> sink)?;   <span class="cm">// constant working set</span></pre>
+  </div>
+</section>
+
+<!-- ══ PRIVACY LEDGER ══ -->
+<section id="privacy">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Privacy ledger</span>
+      <h2>See exactly what left your device.</h2>
+      <p>Trust is not a promise — it's a log. Every outbound action is recorded with what left the machine, where it went, and why. Raw genotypes never appear. (Sample data shown below.)</p>
+    </div>
+    <div class="ledger-wrap reveal">
+      <div class="ledger-scroll">
+        <table class="ledger">
+          <thead><tr><th>Time</th><th>Action</th><th>What left the device</th><th>Raw DNA?</th><th>Destination</th></tr></thead>
+          <tbody id="ledgerBody"><tr><td colspan="5" style="text-align:center;color:var(--dim)">Loading ledger…</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ROADMAP ══ -->
+<section id="roadmap">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Grant roadmap · milestone-gated $BEAST</span>
+      <h2>Four phases, released against evidence.</h2>
+      <p>Each tranche is paid in $BEAST against independently verifiable milestones. The final research-grade phase ships only after threat modeling, differential-privacy design, and a third-party audit.</p>
+    </div>
+    <div class="roadmap">
+      <div class="phase-card reveal">
+        <div class="no">PHASE 1 · ACTIVE</div>
+        <h3>Universal formats</h3>
+        <p>Streaming ingestion, broad consumer + sequencing formats, build harmonization, and a test corpus.</p>
+        <div class="tranche">Tranche 1 · Platform core</div>
+      </div>
+      <div class="phase-card reveal">
+        <div class="no">PHASE 2</div>
+        <h3>DNA skills runtime</h3>
+        <p>Hardcoded analyses become signed manifests + sandboxed local skills with evidence tiers and conformance tests.</p>
+        <div class="tranche">Tranche 1 · Platform core</div>
+      </div>
+      <div class="phase-card reveal">
+        <div class="no">PHASE 3</div>
+        <h3>User agents</h3>
+        <p>Local proactive research agents, triggers, notifications, and an auditable privacy ledger.</p>
+        <div class="tranche">Tranche 2 · User agents</div>
+      </div>
+      <div class="phase-card gated reveal">
+        <div class="no">PHASE 4 · GATED</div>
+        <h3>P2P collective intel</h3>
+        <p>Federated learning where raw genomes never leave devices — behind DP design, secure aggregation & audit.</p>
+        <div class="tranche">Tranche 3 · Audit-gated</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WAITLIST ══ -->
+<section id="waitlist">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <span class="eyebrow">Early access</span>
+      <h2>Own your genome. Join the private beta.</h2>
+      <p>Be first to run sovereign, on-device genomics. No spam, no data collection — just an email so we can invite you.</p>
+      <form class="wl-form" id="wlForm" novalidate>
+        <input type="email" id="wlEmail" placeholder="you@email.com" aria-label="Email address" required />
+        <select id="wlRole" aria-label="I am a…">
+          <option value="">I'm a…</option>
+          <option value="user">Genome owner</option>
+          <option value="researcher">Researcher / clinician</option>
+          <option value="developer">Developer</option>
+          <option value="investor">Investor / partner</option>
+        </select>
+        <button class="btn btn-primary" type="submit" id="wlBtn">Request access</button>
+      </form>
+      <div class="wl-result" id="wlResult" role="status" aria-live="polite"></div>
+      <div class="wl-count" id="wlCount"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top">
+          <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M9 3c0 6 14 8 14 13S9 23 9 29" stroke="url(#g)" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M23 3c0 6-14 8-14 13s14 7 14 13" stroke="url(#g)" stroke-width="2.4" stroke-linecap="round" opacity=".55"/>
+            <path d="M10.5 8h11M9.7 13h12.6M9.7 19h12.6M10.5 24h11" stroke="url(#g)" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <span>SovereignDNA</span>
+        </a>
+        <p>A local-first, privacy-preserving DNA agent workbench. Your genome should be computable by agents without becoming someone else's cloud dataset.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4>Product</h4>
+          <a href="#platform">Platform</a>
+          <a href="#demo">Live demo</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#roadmap">Roadmap</a>
+        </div>
+        <div class="foot-col">
+          <h4>Build</h4>
+          <a href="https://github.com/abhilashi/sovereign-dna" target="_blank" rel="noopener">GitHub repo</a>
+          <a href="https://github.com/abhilashi/sovereign-dna/pull/96" target="_blank" rel="noopener">PR #96 · Streaming</a>
+          <a href="/api/status" target="_blank" rel="noopener">Status API</a>
+        </div>
+        <div class="foot-col">
+          <h4>Ecosystem</h4>
+          <a href="https://thebeastagi.com" target="_blank" rel="noopener">The Beast</a>
+          <a href="https://dash.thebeastagi.com" target="_blank" rel="noopener">Fleet dashboard</a>
+        </div>
+      </div>
+    </div>
+    <p class="disclaimer"><strong>Not medical advice.</strong> SovereignDNA is a wellness, research and education tool for user-controlled analysis. It does not provide medical diagnosis, treatment decisions, or clinical-grade claims. Demo figures on this page use synthetic, non-clinical sample data. Genetic information is sensitive — consult a qualified professional for health decisions.</p>
+    <p class="byline">SovereignDNA is built with <a href="https://thebeastagi.com" target="_blank" rel="noopener">The Beast</a> · milestone-gated $80K $BEAST grant · © 2026</p>
+  </div>
+</footer>
+
+<script src="/app.js" defer></script>
+</body>
+</html>
