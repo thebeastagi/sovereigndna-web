@@ -122,9 +122,9 @@ test.describe("Membership — webhook is authenticated (never accepts unsigned)"
     const res = await request.post("/api/payments/allscale/webhook", {
       data: { status: "paid", checkout_intent_id: "forged", order_id: "forged" },
     });
-    // 503 until the shared secret is provisioned; 401 once it is. Never 200/2xx.
+    // 503 until the shared secret is provisioned; 401 once it is. Never 2xx.
     expect([401, 503]).toContain(res.status());
-    expect(res.status()).toBeLessThan(500 + 1);
+    expect(res.status()).toBeGreaterThanOrEqual(400);
     const j = await res.json();
     expect(j.status).not.toBe("accepted");
   });
@@ -167,7 +167,7 @@ test.describe("Membership — page renders", () => {
   test("selecting a paid tier updates the checkout selection", async ({ page }) => {
     await page.goto("/membership");
     await expect(page.locator(".tier")).toHaveCount(3, { timeout: 15_000 });
-    await page.locator(".tier", { hasText: "Sovereign" }).locator("button").click();
+    await page.locator('.tier button[data-tier="sovereign"]').click();
     await expect(page.locator("#selectedTier")).toContainText(/Sovereign/);
     await expect(page.locator("#memTier")).toHaveValue("sovereign");
   });
