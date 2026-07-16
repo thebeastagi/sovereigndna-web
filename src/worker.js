@@ -235,20 +235,31 @@ async function mintCheckoutIntent(env, { amountCents, description, reference, or
     return { checkout_url: url, checkout_intent_id: payload.allscale_checkout_intent_id || null, order_id: orderId, mode: "self-signed" };
   }
   // Fallback: dashboard public create-intent (mints a real, NON-charging URL).
+  // Prefer the service binding (same-zone public fetch is blocked as a loopback);
+  // fall back to a plain fetch only for local dev where the binding is absent.
+  const req = new Request(DASH_CREATE_INTENT_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      amount_cents: amountCents,
+      stable_coin: 2, // USDC → unlocks card / Apple Pay / Google Pay on hosted page
+      order_description: description,
+      reference,
+    }),
+  });
   let res, jr;
   try {
-    res = await fetch(DASH_CREATE_INTENT_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        amount_cents: amountCents,
-        stable_coin: 2, // USDC → unlocks card / Apple Pay / Google Pay on hosted page
-        order_description: description,
-        reference,
-      }),
-    });
+    if (env.DASH && typeof env.DASH.fetch === "function") {
+      res = await env.DASH.fetch(req.clone());
+    } else {
+      res = await fetch(req);
+    }
     jr = await res.json();
-  } catch { return { error: "upstream_unreachable" }; }
+  } catch {
+    // Last-ditch: if the binding threw, try a direct public fetch (local dev).
+    try { res = await fetch(req); jr = await res.json(); }
+    catch { return { error: "upstream_unreachable" }; }
+  }
   if (!res.ok || !jr || jr.status !== "ok" || !jr.checkout_url) {
     return { error: jr && jr.status ? jr.status : "create_failed", upstream_status: res.status };
   }
