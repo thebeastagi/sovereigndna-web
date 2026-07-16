@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SovereignDNA — Membership</title>
+<meta name="description" content="SovereignDNA membership tiers — Free, Sovereign and Founder. Support local-first, privacy-preserving genomics and unlock priority early-access. Pay by card, Apple Pay, Google Pay or crypto via AllScale." />
+<meta name="theme-color" content="#06070d" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<meta property="og:title" content="SovereignDNA — Membership" />
+<meta property="og:description" content="Back the mission. Free, Sovereign and Founder tiers for local-first genomics." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://sovereigndna.thebeastagi.com/membership" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="g" x1="0" y1="0" x2="32" y2="32">
+    <stop offset="0" stop-color="#33e3c6"/><stop offset=".55" stop-color="#6d7cff"/><stop offset="1" stop-color="#b16cff"/>
+  </linearGradient>
+</defs></svg>
+
+<!-- ══ NAV ══ -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/#top" aria-label="SovereignDNA home">
+      <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M9 3c0 6 14 8 14 13S9 23 9 29" stroke="url(#g)" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M23 3c0 6-14 8-14 13s14 7 14 13" stroke="url(#g)" stroke-width="2.4" stroke-linecap="round" opacity=".55"/>
+        <path d="M10.5 8h11M9.7 13h12.6M9.7 19h12.6M10.5 24h11" stroke="url(#g)" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <span>SovereignDNA<small>by The Beast</small></span>
+    </a>
+    <nav class="nav-links" id="navlinks" aria-label="Primary">
+      <a href="/#platform">Platform</a>
+      <a href="/#demo">Live demo</a>
+      <a href="/#privacy">Privacy</a>
+      <a href="/membership" aria-current="page">Membership</a>
+    </nav>
+    <a class="btn btn-primary btn-sm nav-cta" href="#tiers">See plans</a>
+    <button class="nav-burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- ══ TIERS ══ -->
+<section id="tiers">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Membership</span>
+      <h2>Back sovereign genomics. <span class="grad-text">Choose your tier.</span></h2>
+      <p>SovereignDNA is free and open-source at its core. Membership funds the mission and unlocks priority early-access to new formats, skills and research agents. Pay by card, Apple&nbsp;Pay, Google&nbsp;Pay, local methods or crypto — settled in USDC via AllScale.</p>
+    </div>
+
+    <div class="tiers reveal" id="tierGrid" aria-busy="true">
+      <p class="mem-note">Loading plans…</p>
+    </div>
+    <p class="mem-note" id="pricingNote"></p>
+  </div>
+</section>
+
+<!-- ══ CHECKOUT ══ -->
+<section id="join" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <span class="eyebrow" id="joinEyebrow">Get started</span>
+      <h2 id="joinHeading">Join SovereignDNA</h2>
+      <p class="selected-tier" id="selectedTier">Pick a plan above, or enter your email to start with the Free tier.</p>
+      <form class="mem-form" id="memForm" novalidate>
+        <input type="email" id="memEmail" placeholder="you@email.com" aria-label="Email address" autocomplete="email" required />
+        <input type="hidden" id="memTier" value="free" />
+        <button class="btn btn-primary" type="submit" id="memBtn">Continue</button>
+      </form>
+      <div class="mem-result" id="memResult" role="status" aria-live="polite"></div>
+      <p class="mem-note">Paid tiers open a secure AllScale hosted checkout — pay by card, Apple&nbsp;Pay, Google&nbsp;Pay or crypto; settled in USDC. We never see or store your card details, and no account is required. A quick identity check may be handled by the payment processor (MoonPay / Banxa / Transak), not by us. Nothing is charged until you confirm on AllScale. Note: crypto payments settle on-chain and are final — there are no card-style chargebacks; refunds, where applicable, are issued in stablecoin.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MEMBER AREA ══ -->
+<section id="member" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Members</span>
+      <h2>Already a member?</h2>
+      <p>Check your membership status and unlock your priority early-access brief.</p>
+    </div>
+    <form class="mem-form reveal" id="statusForm" novalidate>
+      <input type="email" id="statusEmail" placeholder="Your membership email" aria-label="Membership email" autocomplete="email" required />
+      <button class="btn btn-ghost" type="submit" id="statusBtn">Check status</button>
+    </form>
+    <div class="mem-result" id="statusResult" role="status" aria-live="polite"></div>
+    <div class="bene-box reveal" id="beneBox" hidden>
+      <h4 id="beneTitle">Early-access brief</h4>
+      <div id="beneBody"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="/#top">
+          <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M9 3c0 6 14 8 14 13S9 23 9 29" stroke="url(#g)" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M23 3c0 6-14 8-14 13s14 7 14 13" stroke="url(#g)" stroke-width="2.4" stroke-linecap="round" opacity=".55"/>
+            <path d="M10.5 8h11M9.7 13h12.6M9.7 19h12.6M10.5 24h11" stroke="url(#g)" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <span>SovereignDNA</span>
+        </a>
+        <p>A local-first, privacy-preserving DNA agent workbench. Your genome should be computable by agents without becoming someone else's cloud dataset.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4>Product</h4>
+          <a href="/#platform">Platform</a>
+          <a href="/#demo">Live demo</a>
+          <a href="/#privacy">Privacy</a>
+          <a href="/membership">Membership</a>
+        </div>
+        <div class="foot-col">
+          <h4>Build</h4>
+          <a href="https://github.com/abhilashi/sovereign-dna" target="_blank" rel="noopener">GitHub repo</a>
+          <a href="/api/member/tiers" target="_blank" rel="noopener">Tiers API</a>
+          <a href="/api/status" target="_blank" rel="noopener">Status API</a>
+        </div>
+        <div class="foot-col">
+          <h4>Ecosystem</h4>
+          <a href="https://thebeastagi.com" target="_blank" rel="noopener">The Beast</a>
+          <a href="https://dash.thebeastagi.com" target="_blank" rel="noopener">Fleet dashboard</a>
+        </div>
+      </div>
+    </div>
+    <p class="disclaimer"><strong>Not medical advice.</strong> SovereignDNA is a wellness, research and education tool for user-controlled analysis. It does not provide medical diagnosis, treatment decisions, or clinical-grade claims. Pricing shown is placeholder and adjustable before public launch. Genetic information is sensitive — consult a qualified professional for health decisions.</p>
+    <p class="byline">SovereignDNA is built with <a href="https://thebeastagi.com" target="_blank" rel="noopener">The Beast</a> · payments secured by AllScale · milestone-gated $80K $BEAST grant · © 2026</p>
+  </div>
+</footer>
+
+<script src="/membership.js"></script>
+</body>
+</html>
