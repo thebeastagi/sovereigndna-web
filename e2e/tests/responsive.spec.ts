@@ -38,7 +38,7 @@ test.describe("Responsive layout", () => {
       // Desktop: inline nav links visible, burger hidden.
       await expect(page.locator("#navlinks")).toBeVisible();
       await expect(page.locator("#burger")).not.toBeVisible();
-      await expect(page.locator("#navlinks").getByRole("link", { name: "Platform" })).toBeVisible();
+      await expect(page.locator("#navlinks").getByRole("link", { name: "Capabilities" })).toBeVisible();
     }
 
     // Demo controls stack/flow correctly and the run button is reachable.
