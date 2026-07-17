@@ -98,8 +98,19 @@
     const chip = $("#statusText");
     if (chip) {
       const fed = s.federated && s.federated.status === "live-synthetic";
-      chip.textContent = fed ? "Phases 1–4 built · FL live (synthetic)"
+      chip.textContent = fed ? "FL live (synthetic) · driving VUS → 0"
                              : `${s.phase.progress_pct}% · ${s.phase.current.split("·")[0].trim()}`;
+    }
+
+    // capabilities → TOP-20 skill grid (worker is the source of truth)
+    const grid = $("#skillGrid");
+    if (grid && s.capabilities && Array.isArray(s.capabilities.top)) {
+      grid.innerHTML = s.capabilities.top.map((sk) => `<div class="skill-card">
+        <div class="sk-top"><span class="sk-no">#${esc(sk.n)}</span>${sk.prototyped ? '<span class="sk-proto">✓ shipped</span>' : ''}</div>
+        <h4>${esc(sk.name)}</h4>
+        <p class="sk-value">${esc(sk.value)}</p>
+        <p class="sk-vus">${esc(sk.vus)}</p>
+      </div>`).join("");
     }
 
     // legacy lists (guarded — removed in the 4-phase layout)
