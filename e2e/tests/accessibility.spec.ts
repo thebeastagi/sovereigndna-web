@@ -36,7 +36,9 @@ test.describe("Accessibility smoke", () => {
     const seenTags = new Set<string>();
 
     await page.locator("body").click({ position: { x: 2, y: 2 } });
-    for (let i = 0; i < 60 && seen.size < wanted.size; i++) {
+    // The four-phase layout adds many interactive links before the waitlist;
+    // allow enough tab presses to walk the full document.
+    for (let i = 0; i < 140 && seen.size < wanted.size; i++) {
       await page.keyboard.press("Tab");
       const info = await page.evaluate(() => {
         const el = document.activeElement as HTMLElement | null;

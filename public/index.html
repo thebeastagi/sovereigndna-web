@@ -4,11 +4,11 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>SovereignDNA — Your genome, your device</title>
-<meta name="description" content="SovereignDNA is a local-first, privacy-preserving DNA agent workbench. Import your genome once, keep raw DNA on your own device, and run verified analysis skills — no cloud, no telemetry. Built with The Beast." />
+<meta name="description" content="SovereignDNA is a local-first, privacy-preserving DNA agent workbench. Import your genome once, keep raw DNA on your own device, run sandboxed analysis skills, and join a differentially-private federated network — only DP-noised aggregates ever cross the boundary. Built with The Beast." />
 <meta name="theme-color" content="#06070d" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <meta property="og:title" content="SovereignDNA — Your genome, your device" />
-<meta property="og:description" content="A local-first, privacy-preserving DNA agent workbench. Raw DNA never leaves your device." />
+<meta property="og:description" content="Local-first genomics with sandboxed skills, a consent ledger, and privacy-preserving federated learning. Raw DNA never leaves your device — only DP-noised aggregates cross the boundary." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://sovereigndna.thebeastagi.com/" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,12 +35,12 @@
     <nav class="nav-links" id="navlinks" aria-label="Primary">
       <a href="#platform">Platform</a>
       <a href="#demo">Live demo</a>
-      <a href="#phase1">Phase 1</a>
+      <a href="#phases">Phases</a>
+      <a href="#federated">Federated</a>
       <a href="#privacy">Privacy</a>
-      <a href="#roadmap">Roadmap</a>
       <a href="/membership">Membership</a>
     </nav>
-    <a class="btn btn-primary btn-sm nav-cta" href="#waitlist">Join the waitlist</a>
+    <a class="btn btn-primary btn-sm nav-cta" href="#access">Get access</a>
     <button class="nav-burger" id="burger" aria-label="Menu" aria-expanded="false">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
@@ -53,16 +53,17 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Local-first genomics · $80K $BEAST grant</span>
+      <span class="eyebrow">Local-first genomics · Phases 1–4 built · $80K $BEAST grant</span>
       <h1>Your genome,<br><span class="grad-text">your device.</span></h1>
-      <p class="sub">SovereignDNA is a local-first DNA agent workbench. Import your genome once, keep raw DNA on your own machine, and run verified analysis skills and research agents — without surrendering your genome to a cloud.</p>
+      <p class="sub">SovereignDNA is a local-first DNA agent workbench. Import your genome once, run verified sandboxed skills on-device, and — if you opt in — contribute to a differentially-private federated network. <strong>Raw DNA never leaves your device; only DP-noised aggregates cross the boundary.</strong></p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#demo">Watch it ingest live ↓</a>
-        <a class="btn btn-ghost" href="#waitlist">Join the waitlist</a>
+        <a class="btn btn-ghost" href="#access">Get access / support the network</a>
       </div>
       <div class="trust" role="list">
         <span role="listitem"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>No telemetry</span>
         <span role="listitem"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>Raw DNA never leaves your device</span>
+        <span role="listitem"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>DP-noised federated learning</span>
         <span role="listitem"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>MIT open source</span>
       </div>
     </div>
@@ -81,28 +82,28 @@
     <div class="sec-head reveal">
       <span class="eyebrow">The platform</span>
       <h2>A sovereign workbench for the most personal data you own.</h2>
-      <p>Millions of people have a genome export and almost no trustworthy local tooling. SovereignDNA turns that file into a private, agent-driven workbench — computation stays on your device by default.</p>
+      <p>Millions of people have a genome export and almost no trustworthy local tooling. SovereignDNA turns that file into a private, agent-driven workbench — computation stays on your device by default, and collective intelligence is built without ever pooling raw DNA.</p>
     </div>
     <div class="pillars">
       <div class="card reveal">
         <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
-        <h3>Local-first</h3>
-        <p>A Tauri + Rust desktop app with a local SQLite store. Your raw genome is imported once and never uploaded.</p>
+        <h3>Local-first ingest</h3>
+        <p>A Tauri + Rust desktop app with a local SQLite store. Whole genomes stream in at a flat, size-independent peak-RAM — imported once, never uploaded.</p>
       </div>
       <div class="card reveal">
         <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 3 4 8 4-8M4 15l4-4M20 15l-4-4M6 21h12"/></svg></div>
-        <h3>Skills runtime</h3>
-        <p>Signed, sandboxed analysis skills with evidence tiers and citations — health-risk, pharmacogenomics, traits, carrier status.</p>
-      </div>
-      <div class="card reveal">
-        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div>
-        <h3>Research agents</h3>
-        <p>Personal agents that watch PubMed and ClinVar for your variants and rerun scores when reference data changes.</p>
+        <h3>Sandboxed skills</h3>
+        <p>Signed skill manifests run inside a wasmi WASM sandbox with no network or filesystem egress — health-risk, pharmacogenomics, traits, carrier status, distributed via a content-addressed registry.</p>
       </div>
       <div class="card reveal">
         <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <h3>Privacy ledger</h3>
-        <p>Every outbound action is logged: which public rsIDs or reference queries left the device, where they went, and why.</p>
+        <h3>Consent &amp; privacy ledger</h3>
+        <p>Every outbound action is logged and gated by revocable consent. <span class="mono">Egress::assert_public_only</span> refuses genotypes by construction — raw DNA can't leave, even by mistake.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M17 7l2-2M5 19l2-2"/></svg></div>
+        <h3>Federated intelligence</h3>
+        <p>Opt in to a differentially-private federated network: model updates are DP-noised and secure-masked so only aggregates — never your genome — cross the boundary. <em>Synthetic data today; real-genome FL is legally gated.</em></p>
       </div>
     </div>
   </div>
@@ -112,9 +113,9 @@
 <section id="demo" class="demo">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Live backend demo · Phase 1.1 shipped</span>
+      <span class="eyebrow">Live backend demo · Phase 1 shipped</span>
       <h2>Streaming ingestion, in real time.</h2>
-      <p>Whole-genome files run 1–100+ GB. The old importer loaded the entire file into RAM. We rebuilt it as a constant-memory stream: file → parser → SQLite, in bounded batches. Run it below — the payload streams live from this site's Cloudflare Worker.</p>
+      <p>Whole-genome files run 1–100+ GB. The old importer loaded the entire file into RAM. We rebuilt it as a constant-memory stream: file → parser → SQLite, in bounded batches. Run it below — the payload streams live from this site's Cloudflare Worker (synthetic data).</p>
     </div>
     <div class="demo-panel reveal">
       <div class="demo-controls">
@@ -156,26 +157,52 @@
   </div>
 </section>
 
-<!-- ══ PHASE 1 ══ -->
-<section id="phase1">
+<!-- ══ PHASES (WHAT'S BUILT) ══ -->
+<section id="phases">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Phase 1 · Universal formats</span>
+      <span class="eyebrow">What's built · Phases 1–4</span>
       <h2>Real, reviewable progress — not a roadmap slide.</h2>
-      <p>The grant's first tranche is underway. Phase 1.1 (streaming ingestion core) shipped as a green, reviewable pull request against the public repo.</p>
+      <p>All four grant phases are built and shipping as green, reviewable pull requests against the public repo. Each card links its PRs on <a href="https://github.com/abhilashi/sovereign-dna" target="_blank" rel="noopener" style="color:var(--helix-1)">abhilashi/sovereign-dna</a>.</p>
     </div>
-    <div class="phase-grid">
-      <div class="list-card reveal">
-        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--helix-1)" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Shipped</h3>
-        <ul class="chk" id="shippedList"><li class="done">Loading…</li></ul>
-        <div class="pr-row" id="prRow"></div>
+    <div class="phase-built-grid">
+
+      <div class="built-card reveal">
+        <div class="bc-head"><span class="bc-no">Phase 1</span><span class="bc-badge built">Built</span></div>
+        <h3>Universal formats &amp; streaming ingestion</h3>
+        <p>Stream a whole genome (23andMe / AncestryDNA / VCF) → SQLite at a flat, size-independent peak-RAM via a <span class="mono">GenomeParser</span> streaming trait and 50k-row transactional batches. Local-first Tauri workbench.</p>
+        <div class="pr-row"><a class="pr-chip" href="https://github.com/abhilashi/sovereign-dna/pull/96" target="_blank" rel="noopener">PR #96 · Streaming core <span class="st">● open</span></a></div>
       </div>
-      <div class="list-card reveal">
-        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Next up</h3>
-        <ul class="chk" id="nextList"><li class="next">Loading…</li></ul>
+
+      <div class="built-card reveal">
+        <div class="bc-head"><span class="bc-no">Phase 2</span><span class="bc-badge built">Built</span></div>
+        <h3>Skills engine + WASM sandbox</h3>
+        <p>Hardcoded analyses become signed skill manifests executed inside a <span class="mono">wasmi</span> WASM sandbox (empty linker → no network, no filesystem egress), distributed through a content-addressed skill registry.</p>
+        <div class="pr-row"><a class="pr-chip" href="https://github.com/abhilashi/sovereign-dna/pull/108" target="_blank" rel="noopener">PR #108 · wasmi sandbox <span class="st">● open</span></a></div>
       </div>
+
+      <div class="built-card reveal">
+        <div class="bc-head"><span class="bc-no">Phase 3</span><span class="bc-badge built">Built</span></div>
+        <h3>Consent &amp; privacy ledger</h3>
+        <p>User-created agents plus an auditable consent / privacy ledger. <span class="mono">Egress::assert_public_only</span> refuses genotypes by construction; consent is revocable and gates every outbound action.</p>
+        <div class="pr-row"><a class="pr-chip" href="https://github.com/abhilashi/sovereign-dna/pull/112" target="_blank" rel="noopener">PR #112 · Consent ledger <span class="st">● open</span></a></div>
+      </div>
+
+      <div class="built-card reveal accent">
+        <div class="bc-head"><span class="bc-no">Phase 4</span><span class="bc-badge live">Live · synthetic</span></div>
+        <h3>Federated learning (DP + secure aggregation)</h3>
+        <p>DP-noised, secure-masked model updates aggregate across nodes with a Rényi (ε,δ) accountant and Bonawitz masking. A <strong>live 3-node round ran on GKE (Jul&nbsp;17, 2026)</strong>. <em>Synthetic data only — real-genome FL is legally gated.</em></p>
+        <div class="pr-row">
+          <a class="pr-chip" href="https://github.com/abhilashi/sovereign-dna/pull/113" target="_blank" rel="noopener">PR #113 · Federated DP <span class="st">● open</span></a>
+          <a class="pr-chip" href="https://github.com/abhilashi/sovereign-dna/pull/114" target="_blank" rel="noopener">PR #114 · Rings transport <span class="st">● open</span></a>
+        </div>
+      </div>
+
     </div>
-    <pre class="code reveal" tabindex="0" role="group" aria-label="Rust streaming ingestion code sample (scrollable)"><span class="cm">// The streaming contract every parser now implements</span>
+
+    <div class="pr-row reveal" id="prRow" style="margin-top:26px" aria-label="Live pull-request status"></div>
+
+    <pre class="code reveal" tabindex="0" role="group" aria-label="Rust streaming ingestion code sample (scrollable)"><span class="cm">// The streaming contract every parser implements (Phase 1)</span>
 <span class="kw">pub trait</span> <span class="ty">GenomeParser</span> {
     <span class="kw">fn</span> <span class="fn">parse_streaming</span>(
         &<span class="kw">self</span>,
@@ -184,9 +211,44 @@
     ) -> <span class="ty">Result</span>&lt;<span class="ty">ParseSummary</span>&gt;;
 }
 
-<span class="cm">// commands::import streams straight into SQLite in bounded batches</span>
-<span class="kw">let mut</span> sink = <span class="ty">DbBatchSink</span>::<span class="fn">new</span>(&tx, <span class="ty">50_000</span>);  <span class="cm">// rollback on parse error</span>
-parser.<span class="fn">parse_streaming</span>(&<span class="kw">mut</span> reader, &<span class="kw">mut</span> sink)?;   <span class="cm">// constant working set</span></pre>
+<span class="cm">// The boundary the whole platform is built around (Phase 3 &amp; 4)</span>
+<span class="ty">Egress</span>::<span class="fn">assert_public_only</span>(&payload)?;   <span class="cm">// genotypes refused by construction</span>
+<span class="kw">let</span> share = dp.<span class="fn">privatize</span>(update)?;            <span class="cm">// L2-clip + Gaussian noise (Rényi ε,δ)</span>
+<span class="kw">let</span> masked = bonawitz.<span class="fn">mask</span>(share);           <span class="cm">// masks cancel → only a DP-noised aggregate crosses</span></pre>
+  </div>
+</section>
+
+<!-- ══ FEDERATED (PHASE 4 HIGHLIGHT) ══ -->
+<section id="federated" class="demo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Phase 4 · Federated learning <span id="flLiveBadge"></span></span>
+      <h2>Collective intelligence, without pooling DNA.</h2>
+      <p>Better genomics needs more data — but nobody should have to hand over their genome to get it. SovereignDNA trains shared models with <strong>federated learning</strong>: your device computes an update locally, differential privacy noises it, secure aggregation masks it, and only the combined, DP-noised aggregate is ever revealed.</p>
+    </div>
+
+    <div class="fed-grid reveal">
+      <div class="fed-card">
+        <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--helix-1)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg> The boundary rule</h4>
+        <p>Raw DNA never leaves your device — <strong>only DP-noised aggregates cross the boundary</strong>. A "clear gradient" update is refused at the device boundary. In the live network, that refusal probe passed.</p>
+      </div>
+      <div class="fed-card">
+        <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--helix-2)" stroke-width="2"><path d="M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10M4 17h16M9 21h6"/></svg> Differential privacy</h4>
+        <p>A Rényi <span class="mono">(ε, δ)</span> accountant bounds each contribution: gradients are L2-clipped and Gaussian noise is added before anything is shared, with a tracked, provable privacy budget.</p>
+      </div>
+      <div class="fed-card">
+        <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--helix-3)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg> Secure aggregation</h4>
+        <p>Bonawitz pairwise additive masking means no party — not even the coordinator — sees any single device's update. The masks cancel exactly, leaving only a DP-noised sum.</p>
+      </div>
+      <div class="fed-card">
+        <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" stroke-width="2"><path d="m3 11 18-5v12L3 13v-2zM11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg> Live on GKE</h4>
+        <p>A real 3-node round ran on <strong>GKE Autopilot</strong> on Jul 17, 2026 — aggregator reported <span class="mono">ROUND OK</span> with a DP-noised, secure-masked aggregate. Image <span class="mono">fl-node:0.1.1</span>, commit <span class="mono">72abe32</span>.</p>
+      </div>
+    </div>
+
+    <div class="fed-caveat reveal">
+      <strong>Honest status:</strong> the federated network runs on <strong>synthetic data only</strong> today. Phase-4 <em>production</em> with real genomes remains <strong>legally gated</strong> — it will not launch without a completed Data Protection Impact Assessment (DPIA), an independent privacy audit, and epsilon-budget sign-off. We are not claiming real-genome federated training is live.
+    </div>
   </div>
 </section>
 
@@ -196,7 +258,7 @@ parser.<span class="fn">parse_streaming</span>(&<span class="kw">mut</span> read
     <div class="sec-head reveal">
       <span class="eyebrow">Privacy ledger</span>
       <h2>See exactly what left your device.</h2>
-      <p>Trust is not a promise — it's a log. Every outbound action is recorded with what left the machine, where it went, and why. Raw genotypes never appear. (Sample data shown below.)</p>
+      <p>Trust is not a promise — it's a log. Every outbound action is recorded with what left the machine, where it went, and why. Raw genotypes never appear; federated shares are DP-noised aggregates only. (Sample data shown below.)</p>
     </div>
     <div class="ledger-wrap reveal">
       <div class="ledger-scroll" tabindex="0" role="group" aria-label="Privacy ledger table (scrollable)">
@@ -215,39 +277,55 @@ parser.<span class="fn">parse_streaming</span>(&<span class="kw">mut</span> read
     <div class="sec-head reveal">
       <span class="eyebrow">Grant roadmap · milestone-gated $BEAST</span>
       <h2>Four phases, released against evidence.</h2>
-      <p>Each tranche is paid in $BEAST against independently verifiable milestones. The final research-grade phase ships only after threat modeling, differential-privacy design, and a third-party audit.</p>
+      <p>Each tranche is paid in $BEAST against independently verifiable milestones. All four phases are built; the real-genome federated deployment ships only after threat modeling, a DPIA, and a third-party privacy audit.</p>
     </div>
     <div class="roadmap">
       <div class="phase-card reveal">
-        <div class="no">PHASE 1 · ACTIVE</div>
+        <div class="no">PHASE 1 · BUILT</div>
         <h3>Universal formats</h3>
-        <p>Streaming ingestion, broad consumer + sequencing formats, build harmonization, and a test corpus.</p>
+        <p>Streaming ingestion, broad consumer + sequencing formats, and a local-first workbench.</p>
         <div class="tranche">Tranche 1 · Platform core</div>
       </div>
       <div class="phase-card reveal">
-        <div class="no">PHASE 2</div>
+        <div class="no">PHASE 2 · BUILT</div>
         <h3>DNA skills runtime</h3>
-        <p>Hardcoded analyses become signed manifests + sandboxed local skills with evidence tiers and conformance tests.</p>
+        <p>Signed skill manifests in a wasmi WASM sandbox with evidence tiers, plus a content-addressed registry.</p>
         <div class="tranche">Tranche 1 · Platform core</div>
       </div>
       <div class="phase-card reveal">
-        <div class="no">PHASE 3</div>
-        <h3>User agents</h3>
-        <p>Local proactive research agents, triggers, notifications, and an auditable privacy ledger.</p>
+        <div class="no">PHASE 3 · BUILT</div>
+        <h3>User agents &amp; consent</h3>
+        <p>Local proactive research agents, revocable consent, and an auditable privacy ledger.</p>
         <div class="tranche">Tranche 2 · User agents</div>
       </div>
       <div class="phase-card gated reveal">
-        <div class="no">PHASE 4 · GATED</div>
-        <h3>P2P collective intel</h3>
-        <p>Federated learning where raw genomes never leave devices — behind DP design, secure aggregation & audit.</p>
+        <div class="no">PHASE 4 · LIVE (SYNTHETIC) · PROD GATED</div>
+        <h3>Federated collective intel</h3>
+        <p>DP + secure-aggregation federated learning — live on synthetic data. Real-genome production is gated on DPIA + independent audit + ε-budget sign-off.</p>
         <div class="tranche">Tranche 3 · Audit-gated</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ══ ACCESS / SUPPORT ══ -->
+<section id="access">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <span class="eyebrow">Get access · support the network</span>
+      <h2>Back sovereign genomics.</h2>
+      <p>SovereignDNA is free and open-source at its core. Membership funds the mission and unlocks priority early-access to new formats, skills and research agents. Checkout is handled by the live AllScale payment rails — pay by card, Apple&nbsp;Pay, Google&nbsp;Pay or crypto, settled in USDC.</p>
+      <div class="hero-cta" style="justify-content:center">
+        <a class="btn btn-primary" href="https://dash.thebeastagi.com/pay" target="_blank" rel="noopener">Get access — pay with AllScale ↗</a>
+        <a class="btn btn-ghost" href="/membership">Compare membership tiers</a>
+      </div>
+      <p class="mem-note" style="margin-top:22px">Secure hosted checkout on <span class="mono">dash.thebeastagi.com/pay</span>. Nothing is charged until you confirm on AllScale. Crypto payments settle on-chain and are final. Pricing shown on the membership page is placeholder and adjustable before public launch.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ══ WAITLIST ══ -->
-<section id="waitlist">
+<section id="waitlist" style="padding-top:0">
   <div class="wrap">
     <div class="cta-box reveal">
       <span class="eyebrow">Early access</span>
@@ -290,25 +368,27 @@ parser.<span class="fn">parse_streaming</span>(&<span class="kw">mut</span> read
           <h4>Product</h4>
           <a href="#platform">Platform</a>
           <a href="#demo">Live demo</a>
+          <a href="#phases">Phases</a>
+          <a href="#federated">Federated</a>
           <a href="#privacy">Privacy</a>
-          <a href="#roadmap">Roadmap</a>
           <a href="/membership">Membership</a>
         </div>
         <div class="foot-col">
           <h4>Build</h4>
           <a href="https://github.com/abhilashi/sovereign-dna" target="_blank" rel="noopener">GitHub repo</a>
-          <a href="https://github.com/abhilashi/sovereign-dna/pull/96" target="_blank" rel="noopener">PR #96 · Streaming</a>
+          <a href="https://github.com/abhilashi/sovereign-dna/pull/113" target="_blank" rel="noopener">PR #113 · Federated DP</a>
           <a href="/api/status" target="_blank" rel="noopener">Status API</a>
         </div>
         <div class="foot-col">
           <h4>Ecosystem</h4>
           <a href="https://thebeastagi.com" target="_blank" rel="noopener">The Beast</a>
+          <a href="https://dash.thebeastagi.com/pay" target="_blank" rel="noopener">Get access (pay)</a>
           <a href="https://dash.thebeastagi.com" target="_blank" rel="noopener">Fleet dashboard</a>
         </div>
       </div>
     </div>
-    <p class="disclaimer"><strong>Not medical advice.</strong> SovereignDNA is a wellness, research and education tool for user-controlled analysis. It does not provide medical diagnosis, treatment decisions, or clinical-grade claims. Demo figures on this page use synthetic, non-clinical sample data. Genetic information is sensitive — consult a qualified professional for health decisions.</p>
-    <p class="byline">SovereignDNA is built with <a href="https://thebeastagi.com" target="_blank" rel="noopener">The Beast</a> · milestone-gated $80K $BEAST grant · © 2026</p>
+    <p class="disclaimer"><strong>Not medical advice.</strong> SovereignDNA is a wellness, research and education tool for user-controlled analysis. It does not provide medical diagnosis, treatment decisions, or clinical-grade claims. The federated network runs on synthetic data only; real-genome federated training is not live and remains legally gated. Demo figures on this page use synthetic, non-clinical sample data. Genetic information is sensitive — consult a qualified professional for health decisions.</p>
+    <p class="byline">SovereignDNA is built with <a href="https://thebeastagi.com" target="_blank" rel="noopener">The Beast</a> · payments secured by AllScale · milestone-gated $80K $BEAST grant · © 2026</p>
   </div>
 </footer>
 
