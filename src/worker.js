@@ -45,36 +45,91 @@ function json(data, status = 200, extra = {}) {
 }
 
 // ── platform status (single source of truth for the "live" numbers) ─────────
+const REPO = "https://github.com/abhilashi/sovereign-dna";
 const STATUS = {
   project: "SovereignDNA",
-  tagline: "Your genome, your device. A local-first DNA agent workbench.",
+  tagline: "Your genome, your device. A local-first DNA agent workbench with privacy-preserving federated intelligence.",
   grant: { instrument: "$BEAST", amount_usd: 80000, status: "milestone-gated" },
   phase: {
-    current: "Phase 1 — Universal formats & streaming ingestion",
-    progress_pct: 22,
+    // Kept for backward-compatible clients (hero chip, legacy lists).
+    current: "Phases 1–4 built · Phase-4 federated network live on synthetic data",
+    progress_pct: 82,
     shipped: [
-      "Constant-memory streaming genome ingestion (file → parser → SQLite)",
-      "GenomeParser streaming trait + SnpSink consumer abstraction",
-      "23andMe, AncestryDNA & single-sample VCF parsers refactored onto the stream",
-      "DbBatchSink: 50k-row transactional batches, rollback on parse error",
+      "Phase 1 — Constant-memory streaming genome ingestion (SSE; flat peak-RAM vs a naïve importer)",
+      "Phase 2 — Skills engine + wasmi WASM sandbox with a signed, content-addressed skill registry",
+      "Phase 3 — Consent / privacy ledger with revocable consent (Egress::assert_public_only)",
+      "Phase 4 — Federated learning: Rényi (ε,δ) differential privacy + Bonawitz secure aggregation",
     ],
     next: [
-      "1.2 Transparent BGZF/gzip/zstd + tabix region queries",
-      "1.3 Full VCF/BCF: multi-sample, INFO/FORMAT, indels/SV",
-      "1.6 GRCh37⇄GRCh38 build harmonization (liftover)",
+      "Phase-4 production hardening: Shamir dropout recovery, Byzantine-robust aggregation, coordinator /health+/metrics",
+      "Legal gate for real-genome FL: DPIA + independent privacy audit + ε-budget sign-off",
+      "Skill authoring SDK + WASM toolkit; expand the on-device analysis-skill catalog",
     ],
   },
-  pull_requests: [
-    { id: 96, title: "Streaming ingestion core", url: "https://github.com/abhilashi/sovereign-dna/pull/96", state: "open" },
-    { id: 97, title: "EFA universal format layer", url: "https://github.com/abhilashi/sovereign-dna/pull/97", state: "open" },
+  // Full four-phase status — each phase, what it is, and its status.
+  phases: [
+    {
+      n: 1, name: "Universal formats & streaming ingestion", status: "built", label: "BUILT",
+      summary: "Stream a whole genome (23andMe / AncestryDNA / VCF) → SQLite at a flat, size-independent peak-RAM. Local-first Tauri workbench.",
+      prs: [{ id: 96, title: "Streaming ingestion core", url: `${REPO}/pull/96`, state: "open" }],
+    },
+    {
+      n: 2, name: "Skills engine + WASM sandbox", status: "built", label: "BUILT",
+      summary: "Hardcoded analyses become signed skill manifests executed in a wasmi WASM sandbox (empty linker → no net / no fs egress), distributed via a content-addressed skill registry.",
+      prs: [{ id: 108, title: "wasmi WASM sandbox", url: `${REPO}/pull/108`, state: "open" }],
+    },
+    {
+      n: 3, name: "Consent & privacy ledger", status: "built", label: "BUILT",
+      summary: "User-created agents plus an auditable consent / privacy ledger. Egress::assert_public_only refuses genotypes by construction; consent is revocable and gates every outbound action.",
+      prs: [{ id: 112, title: "Consent ledger + signed sharing", url: `${REPO}/pull/112`, state: "open" }],
+    },
+    {
+      n: 4, name: "Federated learning (DP + secure aggregation)", status: "live-synthetic", label: "LIVE · SYNTHETIC",
+      summary: "DP-noised, secure-masked model updates aggregate across nodes. Raw DNA never leaves your device — only DP-noised aggregates cross the boundary. Live 3-node round proven on GKE (Jul 17, 2026).",
+      caveat: "SYNTHETIC DATA ONLY. Real-genome federated training remains legally gated — it requires a DPIA, an independent privacy audit, and epsilon-budget sign-off before any production launch.",
+      prs: [
+        { id: 113, title: "Federated DP prototype", url: `${REPO}/pull/113`, state: "open" },
+        { id: 114, title: "Rings transport spike", url: `${REPO}/pull/114`, state: "open" },
+      ],
+    },
   ],
-  stack: ["Tauri 2.0", "Rust", "React / TypeScript", "SQLite", "Local LLM (Ollama)"],
+  // Phase-4 live federated-learning network facts.
+  federated: {
+    status: "live-synthetic",
+    proven: "2026-07-17",
+    nodes: 3,
+    platform: "GKE Autopilot",
+    image: "fl-node:0.1.1",
+    commit: "72abe32",
+    repo: "https://github.com/thebeastagi/sovereigndna-fl-deploy",
+    dp: "Rényi (ε,δ) differential-privacy accountant (L2 clip + Gaussian noise)",
+    secure_agg: "Bonawitz pairwise additive masking — masks cancel to a DP-noised aggregate; no single view of any device's update",
+    boundary: "Raw DNA never leaves your device — only DP-noised aggregates cross the boundary. A clear-gradient update is refused at the device boundary (live refusal probe passed).",
+    data: "synthetic only",
+    legal_gate: "Real-genome FL is legally gated: DPIA + independent privacy audit + epsilon-budget sign-off required before any production launch.",
+  },
+  // Payment rails — reuse the LIVE dashboard AllScale checkout. No new endpoint.
+  payments: {
+    provider: "AllScale",
+    checkout_url: "https://dash.thebeastagi.com/pay",
+    methods: "card, Apple Pay, Google Pay, and crypto (USDC / USDT settlement)",
+    live: true,
+    note: "Membership / network access is paid via the live AllScale checkout on the Beast dashboard.",
+  },
+  pull_requests: [
+    { id: 96, title: "Phase 1 · streaming ingestion", url: `${REPO}/pull/96`, state: "open" },
+    { id: 108, title: "Phase 2 · wasmi sandbox", url: `${REPO}/pull/108`, state: "open" },
+    { id: 112, title: "Phase 3 · consent ledger", url: `${REPO}/pull/112`, state: "open" },
+    { id: 113, title: "Phase 4 · federated DP", url: `${REPO}/pull/113`, state: "open" },
+    { id: 114, title: "Phase 4 · rings transport", url: `${REPO}/pull/114`, state: "open" },
+  ],
+  stack: ["Tauri 2.0", "Rust", "React / TypeScript", "SQLite", "Local LLM (Ollama)", "wasmi WASM sandbox", "Rust FL nodes on GKE"],
   privacy: {
     telemetry: "none",
     raw_dna_leaves_device: false,
-    outbound: "public rsIDs / reference queries only, shown in a privacy ledger",
+    outbound: "public rsIDs / reference queries + DP-noised aggregates only, shown in a privacy ledger",
   },
-  build: "2026-07-16",
+  build: "2026-07-17",
 };
 
 // ── membership tiers (SERVER source of truth — amounts are never trusted from client) ──
@@ -512,6 +567,7 @@ function handleIngestStream(url) {
 
 // ── sample privacy ledger (synthetic, illustrative) ─────────────────────────
 const PRIVACY_LEDGER = [
+  { ts: "2026-07-17T10:12:33Z", action: "Federated round (opt-in)", left_device: "DP-noised, secure-masked aggregate share — no genotypes, no clear gradients", raw_dna: false, dest: "FL coordinator (aggregate only)", reason: "Contribute a differentially-private model update" },
   { ts: "2026-07-16T09:04:11Z", action: "PubMed scan", left_device: "rsID list (128 public rsIDs)", raw_dna: false, dest: "pubmed.ncbi.nlm.nih.gov", reason: "Watch literature for your variants" },
   { ts: "2026-07-16T09:04:02Z", action: "ClinVar refresh", left_device: "reference query (no genotypes)", raw_dna: false, dest: "ncbi.nlm.nih.gov/clinvar", reason: "Update pathogenicity annotations" },
   { ts: "2026-07-16T08:59:47Z", action: "Local skill run: Pharmacogenomics", left_device: "nothing", raw_dna: false, dest: "on-device", reason: "Sandboxed local analysis" },

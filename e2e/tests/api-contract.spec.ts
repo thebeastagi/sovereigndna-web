@@ -14,9 +14,9 @@ test.describe("API contract", () => {
     expect(s.grant.instrument).toBe("$BEAST");
     expect(s.grant.amount_usd).toBe(80000);
 
-    // phase
+    // phase (legacy summary block)
     expect(typeof s.phase.current).toBe("string");
-    expect(s.phase.current).toMatch(/Phase 1/);
+    expect(s.phase.current).toMatch(/Phase/i);
     expect(typeof s.phase.progress_pct).toBe("number");
     expect(s.phase.progress_pct).toBeGreaterThanOrEqual(0);
     expect(s.phase.progress_pct).toBeLessThanOrEqual(100);
@@ -24,6 +24,37 @@ test.describe("API contract", () => {
     expect(s.phase.shipped.length).toBeGreaterThan(0);
     expect(Array.isArray(s.phase.next)).toBe(true);
     expect(s.phase.next.length).toBeGreaterThan(0);
+
+    // phases[] — all four grant phases described
+    expect(Array.isArray(s.phases)).toBe(true);
+    expect(s.phases.length).toBe(4);
+    for (const p of s.phases) {
+      expect(typeof p.n).toBe("number");
+      expect(typeof p.name).toBe("string");
+      expect(typeof p.status).toBe("string");
+      expect(Array.isArray(p.prs)).toBe(true);
+    }
+    const p4 = s.phases.find((p: any) => p.n === 4);
+    expect(p4, "phase 4 present").toBeTruthy();
+    expect(p4.status).toBe("live-synthetic");
+    // Honesty invariant: phase-4 caveat surfaces the synthetic/legal gate.
+    expect(String(p4.caveat).toLowerCase()).toMatch(/synthetic/);
+    expect(String(p4.caveat).toLowerCase()).toMatch(/legally gated|dpia|audit/);
+
+    // federated — live-synthetic network facts + boundary invariant
+    expect(s.federated.status).toBe("live-synthetic");
+    expect(s.federated.data).toBe("synthetic only");
+    expect(String(s.federated.boundary).toLowerCase()).toContain("dp-noised aggregates cross the boundary");
+    expect(String(s.federated.legal_gate).toLowerCase()).toMatch(/dpia|audit|epsilon/);
+    expect(typeof s.federated.nodes).toBe("number");
+
+    // payments — reuse the LIVE dashboard /pay flow, no new endpoint
+    expect(s.payments.provider).toBe("AllScale");
+    expect(s.payments.checkout_url).toBe("https://dash.thebeastagi.com/pay");
+    expect(s.payments.live).toBe(true);
+
+    // No $DNA token language anywhere in the status payload.
+    expect(JSON.stringify(s)).not.toMatch(/\$DNA|token sale|buy \$/i);
 
     // pull requests → abhilashi/sovereign-dna#96
     expect(Array.isArray(s.pull_requests)).toBe(true);

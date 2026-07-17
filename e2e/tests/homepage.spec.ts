@@ -21,10 +21,10 @@ test.describe("Homepage", () => {
 
     // Nav + primary CTA
     await expect(page.locator("header.nav .brand")).toBeVisible();
-    await expect(page.getByRole("link", { name: /Join the waitlist/i }).first()).toBeVisible();
+    await expect(page.getByRole("link", { name: /Get access/i }).first()).toBeVisible();
 
-    // Status chip hydrates from /api/status (progress %).
-    await expect(page.locator("#statusText")).toContainText(/%/, { timeout: 15_000 });
+    // Status chip hydrates from /api/status (four-phase build state or progress %).
+    await expect(page.locator("#statusText")).toContainText(/Phases 1[–-]4 built|FL live|%/, { timeout: 15_000 });
 
     // No uncaught JS/console errors, no failed same-origin requests.
     expect(guards.pageErrors, "uncaught page errors").toEqual([]);
@@ -90,7 +90,7 @@ test.describe("Homepage", () => {
     // viewport; on mobile it is display:none behind the burger (so not an
     // exposed/visible role there) — assert structural presence.
     await expect(page.locator('nav[aria-label="Primary"]')).toHaveCount(1);
-    for (const id of ["platform", "demo", "phase1", "privacy", "roadmap", "waitlist"]) {
+    for (const id of ["platform", "demo", "phases", "federated", "privacy", "roadmap", "access", "waitlist"]) {
       await expect(page.locator(`#${id}`), `section #${id}`).toHaveCount(1);
     }
     // Exactly one H1.

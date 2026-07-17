@@ -93,19 +93,30 @@
     frame();
   })();
 
-  /* ── status API → hero chip, phase lists, PRs ────────────────────── */
+  /* ── status API → hero chip, FL badge, live PR chips ─────────────── */
   fetch("/api/status").then((r) => r.json()).then((s) => {
     const chip = $("#statusText");
-    if (chip) chip.textContent = `${s.phase.progress_pct}% · ${s.phase.current.split("—")[0].trim()}`;
+    if (chip) {
+      const fed = s.federated && s.federated.status === "live-synthetic";
+      chip.textContent = fed ? "Phases 1–4 built · FL live (synthetic)"
+                             : `${s.phase.progress_pct}% · ${s.phase.current.split("·")[0].trim()}`;
+    }
 
+    // legacy lists (guarded — removed in the 4-phase layout)
     const shipped = $("#shippedList");
-    if (shipped && s.phase.shipped) shipped.innerHTML = s.phase.shipped.map((x) =>
+    if (shipped && s.phase && s.phase.shipped) shipped.innerHTML = s.phase.shipped.map((x) =>
       `<li class="done"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>${esc(x)}</li>`).join("");
-
     const next = $("#nextList");
-    if (next && s.phase.next) next.innerHTML = s.phase.next.map((x) =>
+    if (next && s.phase && s.phase.next) next.innerHTML = s.phase.next.map((x) =>
       `<li class="next"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>${esc(x)}</li>`).join("");
 
+    // FL live badge in the federated section eyebrow
+    const flBadge = $("#flLiveBadge");
+    if (flBadge && s.federated && s.federated.status === "live-synthetic") {
+      flBadge.innerHTML = `<span class="live-pill"><span class="dot"></span>Live · ${esc(s.federated.nodes)}-node · ${esc(s.federated.platform)}</span>`;
+    }
+
+    // live PR status row (below the phase cards)
     const pr = $("#prRow");
     if (pr && s.pull_requests) pr.innerHTML = s.pull_requests.map((p) =>
       `<a class="pr-chip" href="${esc(p.url)}" target="_blank" rel="noopener">PR #${p.id} · ${esc(p.title)} <span class="st">● ${esc(p.state)}</span></a>`).join("");
