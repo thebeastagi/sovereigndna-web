@@ -106,7 +106,7 @@
     const grid = $("#skillGrid");
     if (grid && s.capabilities && Array.isArray(s.capabilities.top)) {
       grid.innerHTML = s.capabilities.top.map((sk) => `<div class="skill-card">
-        <div class="sk-top"><span class="sk-no">#${esc(sk.n)}</span>${sk.prototyped ? '<span class="sk-proto">✓ shipped</span>' : ''}</div>
+        <div class="sk-top"><span class="sk-no">#${esc(sk.n)}</span>${sk.prototyped ? '<span class="sk-proto">✓ prototyped</span>' : ''}</div>
         <h4>${esc(sk.name)}</h4>
         <p class="sk-value">${esc(sk.value)}</p>
         <p class="sk-vus">${esc(sk.vus)}</p>

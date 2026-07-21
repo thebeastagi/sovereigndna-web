@@ -170,7 +170,7 @@
     <div class="sec-head reveal">
       <span class="eyebrow">Capabilities · 110 skills · 11 families</span>
       <h2>What your agent can actually do.</h2>
-      <p>A catalogue of on-device analysis skills. Every one runs in the WASM sandbox and is <em>also</em> a network sensor: the strongest are ancestry/frequency skills (the #1 reclassification lever) and self-verifiable traits (the cleanest genotype↔phenotype ground truth). Health-relevant skills are informational — confirm with clinical-grade testing.</p>
+      <p>A 110-skill catalogue of on-device analysis skills. Four are prototyped and running in the WASM sandbox today; the rest are designed. Each is <em>also</em> a network sensor: the strongest are ancestry/frequency skills (the #1 reclassification lever) and self-verifiable traits (the cleanest genotype↔phenotype ground truth). Health-relevant skills are informational — confirm with clinical-grade testing.</p>
     </div>
 
     <div class="fam-grid reveal">
@@ -190,7 +190,7 @@
     <div class="sec-head reveal" style="margin:52px 0 30px">
       <span class="eyebrow">Top 20 · build-these-first</span>
       <h2 style="font-size:clamp(22px,3vw,30px)">The highest-value skills, ranked.</h2>
-      <p>Ranked by user value × feasibility × VUS-yield. <span class="proto-key">✓ shipped</span> marks skills already prototyped. Each pairs an insight for you with its contribution to resolving uncertain variants.</p>
+      <p>Ranked by user value × feasibility × VUS-yield. <span class="proto-key">✓ prototyped</span> marks skills already running in the sandbox. Each pairs an insight for you with its contribution to resolving uncertain variants.</p>
     </div>
 
     <div class="skill-grid reveal" id="skillGrid">
@@ -253,7 +253,7 @@
 <section id="demo">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Live backend demo · Phase 1 shipped</span>
+      <span class="eyebrow">Live backend demo · Phase 1 (in review)</span>
       <h2>Streaming ingestion, in real time.</h2>
       <p>Whole-genome files run 1–100+ GB. The old importer loaded the entire file into RAM. We rebuilt it as a constant-memory stream: file → parser → SQLite, in bounded batches. Run it below — the payload streams live from this site's Cloudflare Worker (synthetic data).</p>
     </div>
@@ -301,28 +301,28 @@
 <section id="phases">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">What's built · Phases 1–4</span>
+      <span class="eyebrow">Built — in review · Phases 1–4</span>
       <h2>Real, reviewable progress — not a roadmap slide.</h2>
-      <p>The product is built on four grant phases, each shipping as green, reviewable pull requests against the public repo. Each card links its PRs on <a href="https://github.com/abhilashi/sovereign-dna" target="_blank" rel="noopener" style="color:var(--helix-1)">abhilashi/sovereign-dna</a>.</p>
+      <p>The product is built across four grant phases, each opened as a green, reviewable pull request (#96–#114) against the public repo — all currently in review, none yet merged upstream. Each card links its PRs on <a href="https://github.com/abhilashi/sovereign-dna" target="_blank" rel="noopener" style="color:var(--helix-1)">abhilashi/sovereign-dna</a>.</p>
     </div>
     <div class="phase-built-grid">
 
       <div class="built-card reveal">
-        <div class="bc-head"><span class="bc-no">Phase 1</span><span class="bc-badge built">Built</span></div>
+        <div class="bc-head"><span class="bc-no">Phase 1</span><span class="bc-badge built">Built · in review</span></div>
         <h3>Universal formats &amp; streaming ingestion</h3>
         <p>Stream a whole genome (23andMe / AncestryDNA / VCF) → SQLite at a flat, size-independent peak-RAM via a <span class="mono">GenomeParser</span> streaming trait and 50k-row transactional batches. Local-first Tauri workbench.</p>
         <div class="pr-row"><a class="pr-chip" href="https://github.com/abhilashi/sovereign-dna/pull/96" target="_blank" rel="noopener">PR #96 · Streaming core <span class="st">● open</span></a></div>
       </div>
 
       <div class="built-card reveal">
-        <div class="bc-head"><span class="bc-no">Phase 2</span><span class="bc-badge built">Built</span></div>
+        <div class="bc-head"><span class="bc-no">Phase 2</span><span class="bc-badge built">Built · in review</span></div>
         <h3>Skills engine + WASM sandbox</h3>
         <p>Hardcoded analyses become signed skill manifests executed inside a <span class="mono">wasmi</span> WASM sandbox (empty linker → no network, no filesystem egress), distributed through a content-addressed skill registry.</p>
         <div class="pr-row"><a class="pr-chip" href="https://github.com/abhilashi/sovereign-dna/pull/108" target="_blank" rel="noopener">PR #108 · wasmi sandbox <span class="st">● open</span></a></div>
       </div>
 
       <div class="built-card reveal">
-        <div class="bc-head"><span class="bc-no">Phase 3</span><span class="bc-badge built">Built</span></div>
+        <div class="bc-head"><span class="bc-no">Phase 3</span><span class="bc-badge built">Built · in review</span></div>
         <h3>Consent &amp; privacy ledger</h3>
         <p>User-created agents plus an auditable consent / privacy ledger. <span class="mono">Egress::assert_public_only</span> refuses genotypes by construction; consent is revocable and gates every outbound action.</p>
         <div class="pr-row"><a class="pr-chip" href="https://github.com/abhilashi/sovereign-dna/pull/112" target="_blank" rel="noopener">PR #112 · Consent ledger <span class="st">● open</span></a></div>
@@ -390,7 +390,7 @@
         <div class="no">BUILT · PHASES 1–4</div>
         <h3>The engine</h3>
         <p>Streaming ingest, WASM skill sandbox, consent ledger, and DP + secure-aggregation federated learning — live on synthetic data.</p>
-        <div class="tranche">Shipped</div>
+        <div class="tranche">Built · in review</div>
       </div>
       <div class="phase-card reveal">
         <div class="no">NEXT · VUS PROBES</div>
@@ -436,7 +436,7 @@
     <div class="cta-box reveal">
       <span class="eyebrow">Early access</span>
       <h2>Own your genome. Join the private beta.</h2>
-      <p>Be first to run sovereign, on-device genomics. No spam, no data collection — just an email so we can invite you.</p>
+      <p>Be first to run sovereign, on-device genomics. No spam, no tracking — we store only your email so we can invite you.</p>
       <form class="wl-form" id="wlForm" novalidate>
         <input type="email" id="wlEmail" placeholder="you@email.com" aria-label="Email address" required />
         <select id="wlRole" aria-label="I am a…">

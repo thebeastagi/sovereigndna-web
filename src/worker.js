@@ -78,7 +78,7 @@ const STATUS = {
   capabilities: {
     total_skills: 110,
     family_count: 11,
-    note: "110 on-device analysis skills across 11 families. Each runs in the wasmi WASM sandbox (zero network / filesystem egress); the only thing that may cross the boundary — with per-skill consent — is a DP-noised aggregate, never a genotype.",
+    note: "A 110-skill catalogue across 11 families. Four are prototyped and running in the wasmi WASM sandbox today (zero network / filesystem egress); the rest are designed. When a skill runs, the only thing that may cross the boundary — with per-skill consent — is a DP-noised aggregate, never a genotype.",
     families: [
       { key: "A", name: "Traits — visible & self-verifiable", count: 20, value: "Eye color, taste, lactose, alcohol flush — you can confirm the real phenotype, giving the cleanest genotype↔phenotype labels." },
       { key: "B", name: "Ancestry, archaic & population", count: 10, value: "Biogeographic + fine-scale ancestry — the prerequisite for ancestry-stratified allele frequencies, the #1 benign-reclassification lever." },
