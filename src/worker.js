@@ -48,8 +48,74 @@ function json(data, status = 200, extra = {}) {
 const REPO = "https://github.com/abhilashi/sovereign-dna";
 const STATUS = {
   project: "SovereignDNA",
-  tagline: "Your genome, your device. A local-first DNA agent workbench with privacy-preserving federated intelligence.",
+  tagline: "The private genome agent you run locally — collaborating, without your DNA ever leaving your device, to drive the world's Variants of Unknown Significance toward zero.",
   grant: { instrument: "$BEAST", amount_usd: 80000, status: "milestone-gated" },
+  // ── Mission / North Star (the product's reason to exist) ──
+  mission: {
+    northstar: "Every genome carries variants nobody can yet interpret. SovereignDNA is the private agent you run that collaborates — without your DNA ever leaving your device — to drive the world's Variants of Unknown Significance (VUS) toward zero.",
+    kpi: "Drive the global count of Variants of Unknown Significance (VUS) toward zero.",
+    // Honest, sourced framing of the problem (point-in-time public figures).
+    problem: {
+      clinvar_classified_variants: "> 2,000,000",
+      vus_count_2024_audit: "1,251,444",
+      vus_share_pct: 44.6,
+      missense_vus_share_pct: 90,
+      note: "VUS are the single largest category in ClinVar and are inequitably distributed — people of non-European ancestry receive VUS results at much higher rates because reference databases under-represent their populations.",
+      sources: [
+        "NAR Genomics & Bioinformatics 2024 (lqae154): 1,251,444 VUS = 44.6% of ClinVar classifications",
+        "AJHG 2023 'Will VUS still exist in 2030?': >2M variants, ~36% VUS (+~5% conflicting)",
+        "bioRxiv 2026 (MAVE groups): >90% of missense variants in ~4,000 disease genes are VUS",
+        "Nature Communications 2025 / Sci Rep 2025: ancestry under-representation drives the VUS gap",
+      ],
+    },
+    lever: "The #1 lever is ancestry-diverse allele frequencies (ACMG BA1/BS1/PM2) — exactly the under-sampled data a globally-distributed private network is positioned to produce.",
+    boundary: "Raw DNA never leaves your device — only DP-noised aggregates cross the boundary.",
+    honest_role: "SovereignDNA produces prioritized candidate evidence that FEEDS the formal ACMG/ClinGen reclassification pipeline. It does NOT perform or replace clinical interpretation.",
+    ladder: "Candidate signal is graded on an L0→L4 evidence ladder (gates, not scores); only L4 items are called a 'proposed reclassification', and even L4 is a submission to expert panels — never a verdict.",
+  },
+  // ── Capabilities: the on-device analysis-skill catalogue ──
+  // Dual role: each skill is a user-facing insight AND a privacy-preserving VUS-reduction sensor.
+  capabilities: {
+    total_skills: 110,
+    family_count: 11,
+    note: "A 110-skill catalogue across 11 families. Four are prototyped and running in the wasmi WASM sandbox today (zero network / filesystem egress); the rest are designed. When a skill runs, the only thing that may cross the boundary — with per-skill consent — is a DP-noised aggregate, never a genotype.",
+    families: [
+      { key: "A", name: "Traits — visible & self-verifiable", count: 20, value: "Eye color, taste, lactose, alcohol flush — you can confirm the real phenotype, giving the cleanest genotype↔phenotype labels." },
+      { key: "B", name: "Ancestry, archaic & population", count: 10, value: "Biogeographic + fine-scale ancestry — the prerequisite for ancestry-stratified allele frequencies, the #1 benign-reclassification lever." },
+      { key: "C", name: "Carrier status (recessive)", count: 12, value: "CFTR, HBB, G6PD, HFE and more — actionable, confirmable carrier status with large ancestry frequency gaps." },
+      { key: "D", name: "Health-risk & polygenic scores", count: 18, value: "T2D, CAD, breast-cancer and other PRS with honest exposed bands and transferability caveats — never fake percentiles." },
+      { key: "E", name: "Pharmacogenomics", count: 12, value: "CYP2C19/2D6, warfarin, statins, HLA drug-reaction — a confirmed drug response is a real-world functional phenotype." },
+      { key: "F", name: "Rare-variant & clinical (WGS)", count: 10, value: "Personal VUS report, BRCA/Lynch, novel-variant flagging — the WGS tier where actual rare VUS live and get discovered." },
+      { key: "G", name: "Nutrigenomics & metabolism", count: 8, value: "Vitamin D, B12/folate, iron, caffeine — biomarker self-report becomes a quantitative genotype↔phenotype signal." },
+      { key: "H", name: "Athletic & physical", count: 5, value: "ACTN3 power/endurance, VO2max, injury lean — self-reported athletic phenotype at scale." },
+      { key: "I", name: "Cognitive & behavioral", count: 5, value: "Chronotype, caffeine-sleep and more — heavily caveated (directional/speculative), exposed-bands only." },
+      { key: "J", name: "Immune, HLA & infectious-disease", count: 5, value: "HLA typing, CCR5-Δ32, secretor status — very ancestry-variable HLA frequencies plus disease/drug associations." },
+      { key: "K", name: "Uniqueness, fingerprint & network-meta", count: 5, value: "Rarity score, genome sonification, kinship matching — grows the network and unlocks family co-segregation (PP1/BS4)." },
+    ],
+    // Ranked TOP-20 (value × feasibility × VUS-yield). "prototyped" flags shipped skills.
+    top: [
+      { n: 1,  name: "Ancestry-stratified allele-frequency contribution", value: "Your genotypes add to the frequency map for your ancestry", vus: "★ BA1/BS1/PM2 benign evidence, esp. under-represented populations" },
+      { n: 2,  name: "Biogeographic ancestry composition", value: "Your ancestral population mix", vus: "Ancestry-labels every contributed genotype (prereq for frequency stratification)" },
+      { n: 3,  name: "Personal VUS report", value: "Which of your variants are VUS in ClinVar today", vus: "Turns users into targeted contributors for their own uncertain variants" },
+      { n: 4,  name: "Genetic uniqueness / rarity score", value: "\"Your exact profile is ~1 in X\"", vus: "Surfaces rare candidate variants for matchmaking", prototyped: true },
+      { n: 5,  name: "Genome fingerprint + sonification", value: "Your DNA as shareable art + sound", vus: "Engagement/retention → grows the contributor base", prototyped: true },
+      { n: 6,  name: "Eye color", value: "Predicted vs your actual eye color", vus: "★ Self-verifiable → clean genotype↔phenotype tuples (PP4/BP4 calibration)" },
+      { n: 7,  name: "Lactase persistence", value: "Likely adult lactose tolerance", vus: "Self-verifiable digestion phenotype validating MCM6/LCT in non-European ancestries" },
+      { n: 8,  name: "Alcohol flush (ALDH2/ADH1B)", value: "Do you flush when drinking?", vus: "Near-Mendelian gold-standard genotype↔phenotype anchor" },
+      { n: 9,  name: "Bitter-taste / cilantro / asparagus", value: "Can you taste PTC? Does cilantro taste soapy?", vus: "Highly self-verifiable near-Mendelian labels across populations" },
+      { n: 10, name: "Hereditary hemochromatosis (HFE)", value: "Iron-overload carrier status", vus: "Common actionable variant; ferritin self-report → penetrance signal (PP4)" },
+      { n: 11, name: "APOE (Alzheimer's-adjacent)", value: "Your APOE genotype (ε2/ε3/ε4)", vus: "Well-defined locus; family-history → penetrance/age-of-onset by ancestry" },
+      { n: 12, name: "Pharmacogenomic formulary (CPIC panel)", value: "Drug-by-drug metabolizer report", vus: "Confirmed drug response = real-world functional phenotype (PP4/PS4-like)", prototyped: true },
+      { n: 13, name: "Neanderthal / archaic variant deep-dive", value: "The specific archaic variants you carry", vus: "Introgressed-allele frequencies refine population references", prototyped: true },
+      { n: 14, name: "Runs-of-homozygosity / consanguinity", value: "Long identical stretches in your genome", vus: "Enables recessive-VUS prioritization (PM3/segregation context)" },
+      { n: 15, name: "G6PD deficiency (X-linked)", value: "Drug / fava-bean hemolysis risk", vus: "Actionable; large ancestry-frequency gaps → high benign-reclassification value" },
+      { n: 16, name: "Caffeine metabolism + sleep", value: "Fast/slow caffeine; caffeine-sleep effect", vus: "Self-verifiable behavioral phenotype at massive scale" },
+      { n: 17, name: "Vitamin D tendency (GC/CYP2R1)", value: "Genetic lean toward lower vitamin D", vus: "Lab-value self-report → quantitative genotype↔biomarker signal" },
+      { n: 18, name: "Type 2 diabetes PRS (honest bands)", value: "Common-variant metabolic lean, bands exposed", vus: "Diagnosis self-report improves non-European PRS transferability (PS4/PP4)" },
+      { n: 19, name: "Relative / kinship matching (consented)", value: "Find genetic relatives on the network", vus: "★ Unlocks family co-segregation (PP1/BS4) — population databases can't provide it" },
+      { n: 20, name: "Rare-variant carrier matchmaking (Beacon)", value: "\"Someone else carries your rare variant\"", vus: "★ Federated GA4GH-Beacon matching seeds the n-of-2 that starts a case" },
+    ],
+  },
   phase: {
     // Kept for backward-compatible clients (hero chip, legacy lists).
     current: "Phases 1–4 built · Phase-4 federated network live on synthetic data",

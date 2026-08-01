@@ -53,8 +53,37 @@ test.describe("API contract", () => {
     expect(s.payments.checkout_url).toBe("https://dash.thebeastagi.com/pay");
     expect(s.payments.live).toBe(true);
 
+    // mission — North Star + honest, sourced VUS problem framing
+    expect(s.mission, "mission block present").toBeTruthy();
+    expect(String(s.mission.northstar)).toMatch(/Variants of Unknown Significance|VUS/);
+    expect(String(s.mission.kpi).toLowerCase()).toContain("toward zero");
+    expect(String(s.mission.boundary).toLowerCase()).toContain("dp-noised aggregates cross the boundary");
+    // Honesty invariant: candidate signal FEEDS the formal pipeline, never replaces clinical interpretation.
+    expect(String(s.mission.honest_role).toLowerCase()).toMatch(/feeds|does not perform|does not replace/);
+    expect(s.mission.problem, "problem framing present").toBeTruthy();
+    expect(Array.isArray(s.mission.problem.sources)).toBe(true);
+    expect(s.mission.problem.sources.length).toBeGreaterThan(0);
+    expect(typeof s.mission.problem.vus_share_pct).toBe("number");
+
+    // capabilities — 11 families summing to the advertised total + ranked TOP list
+    expect(s.capabilities, "capabilities block present").toBeTruthy();
+    expect(s.capabilities.total_skills).toBe(110);
+    expect(Array.isArray(s.capabilities.families)).toBe(true);
+    expect(s.capabilities.families.length).toBe(11);
+    const famSum = s.capabilities.families.reduce((a: number, f: any) => a + f.count, 0);
+    expect(famSum, "family counts sum to total").toBe(s.capabilities.total_skills);
+    expect(Array.isArray(s.capabilities.top)).toBe(true);
+    expect(s.capabilities.top.length).toBe(20);
+    for (const sk of s.capabilities.top) {
+      expect(typeof sk.n).toBe("number");
+      expect(typeof sk.name).toBe("string");
+      expect(typeof sk.value).toBe("string");
+      expect(typeof sk.vus).toBe("string");
+    }
+    expect(s.capabilities.top[0].name).toMatch(/Ancestry-stratified allele-frequency/i);
+
     // No $DNA token language anywhere in the status payload.
-    expect(JSON.stringify(s)).not.toMatch(/\$DNA|token sale|buy \$/i);
+    expect(JSON.stringify(s)).not.toMatch(/\$DNA|token sale|buy \$|ticker|presale/i);
 
     // pull requests → abhilashi/sovereign-dna#96
     expect(Array.isArray(s.pull_requests)).toBe(true);

@@ -38,7 +38,7 @@ test.describe("Responsive layout", () => {
       // Desktop: inline nav links visible, burger hidden.
       await expect(page.locator("#navlinks")).toBeVisible();
       await expect(page.locator("#burger")).not.toBeVisible();
-      await expect(page.locator("#navlinks").getByRole("link", { name: "Platform" })).toBeVisible();
+      await expect(page.locator("#navlinks").getByRole("link", { name: "Capabilities" })).toBeVisible();
     }
 
     // Demo controls stack/flow correctly and the run button is reachable.
@@ -54,7 +54,7 @@ test.describe("Responsive layout", () => {
 
   test("key sections render above-the-fold content without clipping", async ({ page }) => {
     await page.goto("/", { waitUntil: "networkidle" });
-    for (const id of ["platform", "demo", "privacy", "roadmap", "waitlist"]) {
+    for (const id of ["mission", "product", "capabilities", "demo", "privacy", "roadmap", "waitlist"]) {
       const box = await page.locator(`#${id}`).boundingBox();
       expect(box, `section #${id} has a bounding box`).toBeTruthy();
       expect(box!.width, `section #${id} width > 0`).toBeGreaterThan(0);

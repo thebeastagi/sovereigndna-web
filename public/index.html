@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>SovereignDNA — Your genome, your device</title>
-<meta name="description" content="SovereignDNA is a local-first, privacy-preserving DNA agent workbench. Import your genome once, keep raw DNA on your own device, run sandboxed analysis skills, and join a differentially-private federated network — only DP-noised aggregates ever cross the boundary. Built with The Beast." />
+<title>SovereignDNA — Your genome, your device. Drive VUS to zero.</title>
+<meta name="description" content="SovereignDNA is the private genome agent you run locally. It tells you what your variants mean today and — without your DNA ever leaving your device — collaborates over a differentially-private federated network to drive the world's Variants of Unknown Significance (VUS) toward zero. Only DP-noised aggregates cross the boundary. Built with The Beast." />
 <meta name="theme-color" content="#06070d" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <meta property="og:title" content="SovereignDNA — Your genome, your device" />
-<meta property="og:description" content="Local-first genomics with sandboxed skills, a consent ledger, and privacy-preserving federated learning. Raw DNA never leaves your device — only DP-noised aggregates cross the boundary." />
+<meta property="og:description" content="A private, local-first genome agent that drives Variants of Unknown Significance toward zero — without your raw DNA ever leaving your device. Only DP-noised aggregates cross the boundary." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://sovereigndna.thebeastagi.com/" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,11 +33,11 @@
       <span>SovereignDNA<small>by The Beast</small></span>
     </a>
     <nav class="nav-links" id="navlinks" aria-label="Primary">
-      <a href="#platform">Platform</a>
+      <a href="#mission">Mission</a>
+      <a href="#product">What it is</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#federated">How it works</a>
       <a href="#demo">Live demo</a>
-      <a href="#phases">Phases</a>
-      <a href="#federated">Federated</a>
-      <a href="#privacy">Privacy</a>
       <a href="/membership">Membership</a>
     </nav>
     <a class="btn btn-primary btn-sm nav-cta" href="#access">Get access</a>
@@ -49,21 +49,21 @@
 
 <a id="top"></a>
 
-<!-- ══ HERO ══ -->
+<!-- ══ HERO — MISSION FRONT AND CENTRE ══ -->
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Local-first genomics · Phases 1–4 built · $80K $BEAST grant</span>
+      <span class="eyebrow">The mission · drive VUS → 0 · local-first genomics</span>
       <h1>Your genome,<br><span class="grad-text">your device.</span></h1>
-      <p class="sub">SovereignDNA is a local-first DNA agent workbench. Import your genome once, run verified sandboxed skills on-device, and — if you opt in — contribute to a differentially-private federated network. <strong>Raw DNA never leaves your device; only DP-noised aggregates cross the boundary.</strong></p>
+      <p class="sub">Every genome carries variants nobody can yet interpret. SovereignDNA is the <strong>private agent you run</strong> that tells you what your variants mean today <em>and</em> collaborates — <strong>without your DNA ever leaving your device</strong> — to drive the world's <strong>Variants of Unknown Significance toward zero</strong>. Only DP-noised aggregates ever cross the boundary.</p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="#demo">Watch it ingest live ↓</a>
+        <a class="btn btn-primary" href="#mission">See the mission ↓</a>
         <a class="btn btn-ghost" href="#access">Get access / support the network</a>
       </div>
       <div class="trust" role="list">
-        <span role="listitem"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>No telemetry</span>
         <span role="listitem"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>Raw DNA never leaves your device</span>
         <span role="listitem"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>DP-noised federated learning</span>
+        <span role="listitem"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>No telemetry</span>
         <span role="listitem"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>MIT open source</span>
       </div>
     </div>
@@ -76,44 +76,184 @@
   </div>
 </section>
 
-<!-- ══ PLATFORM PILLARS ══ -->
-<section id="platform">
+<!-- ══ MISSION — THE VUS PROBLEM ══ -->
+<section id="mission">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">The platform</span>
-      <h2>A sovereign workbench for the most personal data you own.</h2>
-      <p>Millions of people have a genome export and almost no trustworthy local tooling. SovereignDNA turns that file into a private, agent-driven workbench — computation stays on your device by default, and collective intelligence is built without ever pooling raw DNA.</p>
+      <span class="eyebrow">The mission</span>
+      <h2>Millions of variants sit in a folder marked <span class="grad-text">"we don't know yet."</span></h2>
+      <p>A <strong>Variant of Uncertain Significance (VUS)</strong> is a genetic change that's been observed but can't yet be called disease-causing or benign. They are the single largest category in ClinVar — and they hit under-represented ancestries hardest, because reference databases don't include enough of their populations. That gap is exactly what a global, privacy-first network can close.</p>
+    </div>
+
+    <div class="vus-stats reveal">
+      <div class="vus-stat">
+        <div class="v">&gt; 2M</div>
+        <div class="k">classified variants in ClinVar</div>
+        <small>the public scoreboard SovereignDNA helps feed</small>
+      </div>
+      <div class="vus-stat accent">
+        <div class="v">44.6%</div>
+        <div class="k">of ClinVar classifications are VUS</div>
+        <small>1,251,444 VUS — 2024 point-in-time audit</small>
+      </div>
+      <div class="vus-stat">
+        <div class="v">&gt; 90%</div>
+        <div class="k">of missense variants in disease genes are VUS</div>
+        <small>where the uncertainty concentrates</small>
+      </div>
+      <div class="vus-stat">
+        <div class="v">#1</div>
+        <div class="k">lever = ancestry-diverse allele frequency</div>
+        <small>~75–90% of reclassifications are downgrades to benign</small>
+      </div>
+    </div>
+
+    <div class="mission-kpi reveal">
+      <div class="kpi-north">
+        <span class="eyebrow">North-star KPI</span>
+        <p><strong>Drive the global count of Variants of Unknown Significance toward zero.</strong> SovereignDNA can't unilaterally reclassify a variant — that authority stays with expert panels. What it <em>can</em> own is the rate-limiting input to that authority: <strong>ancestry-diverse evidence at scale, produced without anyone surrendering their genome.</strong></p>
+      </div>
+    </div>
+
+    <p class="src-note reveal">Sources: <em>NAR Genomics &amp; Bioinformatics</em> 2024 (lqae154) · <em>AJHG</em> 2023 "Will VUS still exist in 2030?" · bioRxiv 2026 (MAVE groups) · <em>Nature Communications</em> 2025 / <em>Sci Rep</em> 2025 (ancestry gap). Figures are point-in-time — ClinVar and gnomAD grow continuously.</p>
+  </div>
+</section>
+
+<!-- ══ WHAT IS SOVEREIGNDNA (PRODUCT IDENTITY) ══ -->
+<section id="product" class="demo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What is SovereignDNA</span>
+      <h2>A private genome workbench you run — that quietly moves the field forward.</h2>
+      <p>Millions of people have a genome export and almost no trustworthy local tooling. SovereignDNA is a desktop app that turns that file into a private, agent-driven workbench. Computation stays on your device by default — and when you opt in, your agent contributes <em>privacy-protected evidence</em> to a network that resolves VUS. <strong>Every skill is both an insight for you and a sensor for the mission.</strong></p>
     </div>
     <div class="pillars">
       <div class="card reveal">
         <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
-        <h3>Local-first ingest</h3>
-        <p>A Tauri + Rust desktop app with a local SQLite store. Whole genomes stream in at a flat, size-independent peak-RAM — imported once, never uploaded.</p>
+        <h3>Runs on your machine</h3>
+        <p>A Tauri + Rust desktop app with a local SQLite store and a local LLM. Whole genomes stream in at a flat, size-independent peak-RAM — imported once, never uploaded.</p>
       </div>
       <div class="card reveal">
         <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 3 4 8 4-8M4 15l4-4M20 15l-4-4M6 21h12"/></svg></div>
-        <h3>Sandboxed skills</h3>
-        <p>Signed skill manifests run inside a wasmi WASM sandbox with no network or filesystem egress — health-risk, pharmacogenomics, traits, carrier status, distributed via a content-addressed registry.</p>
+        <h3>Answers your questions</h3>
+        <p>110 sandboxed analysis skills — ancestry, traits, carrier status, pharmacogenomics, rare-variant reports — run locally in a WASM sandbox with no network or filesystem egress.</p>
       </div>
       <div class="card reveal">
         <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <h3>Consent &amp; privacy ledger</h3>
-        <p>Every outbound action is logged and gated by revocable consent. <span class="mono">Egress::assert_public_only</span> refuses genotypes by construction — raw DNA can't leave, even by mistake.</p>
+        <h3>Never leaks your DNA</h3>
+        <p>A consent &amp; privacy ledger logs every outbound action. <span class="mono">Egress::assert_public_only</span> refuses genotypes by construction — raw DNA can't leave, even by mistake.</p>
       </div>
       <div class="card reveal">
         <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M17 7l2-2M5 19l2-2"/></svg></div>
-        <h3>Federated intelligence</h3>
-        <p>Opt in to a differentially-private federated network: model updates are DP-noised and secure-masked so only aggregates — never your genome — cross the boundary. <em>Synthetic data today; real-genome FL is legally gated.</em></p>
+        <h3>Collaborates privately</h3>
+        <p>Opt in and your agent joins a differentially-private federated network. It contributes ancestry-stratified frequency and phenotype signal — <em>DP-noised aggregates only</em> — that helps resolve variants someone else is worried about.</p>
+      </div>
+    </div>
+
+    <div class="dual-callout reveal">
+      <div class="dc-side">
+        <span class="dc-tag">For you</span>
+        <p>"Your CYP2D6 diplotype suggests altered metabolism of drug X." "This variant is common in your ancestry." Real, local insight you run the agent for today.</p>
+      </div>
+      <div class="dc-arrow" aria-hidden="true">⇄</div>
+      <div class="dc-side">
+        <span class="dc-tag">For the world</span>
+        <p>The <em>same</em> local computation emits a privacy-protected statistic that, through the federated round, becomes evidence toward an ACMG code for some uncertain variant.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ LIVE DEMO ══ -->
-<section id="demo" class="demo">
+<!-- ══ CAPABILITIES — THE SKILL CATALOGUE ══ -->
+<section id="capabilities">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Live backend demo · Phase 1 shipped</span>
+      <span class="eyebrow">Capabilities · 110 skills · 11 families</span>
+      <h2>What your agent can actually do.</h2>
+      <p>A 110-skill catalogue of on-device analysis skills. Four are prototyped and running in the WASM sandbox today; the rest are designed. Each is <em>also</em> a network sensor: the strongest are ancestry/frequency skills (the #1 reclassification lever) and self-verifiable traits (the cleanest genotype↔phenotype ground truth). Health-relevant skills are informational — confirm with clinical-grade testing.</p>
+    </div>
+
+    <div class="fam-grid reveal">
+      <div class="fam-card"><span class="fam-ct">20</span><h4>Traits — visible &amp; self-verifiable</h4><p>Eye color, taste, lactose, alcohol flush. You can confirm the real phenotype — the cleanest labels the network can get.</p></div>
+      <div class="fam-card star"><span class="fam-ct">10</span><h4>Ancestry, archaic &amp; population</h4><p>Biogeographic + fine-scale ancestry — the prerequisite for ancestry-stratified allele frequencies, the #1 benign-reclassification lever.</p></div>
+      <div class="fam-card"><span class="fam-ct">12</span><h4>Carrier status (recessive)</h4><p>CFTR, HBB, G6PD, HFE — actionable, confirmable carrier status with large ancestry frequency gaps.</p></div>
+      <div class="fam-card"><span class="fam-ct">18</span><h4>Health-risk &amp; polygenic scores</h4><p>T2D, CAD, breast-cancer and more — honest exposed bands with transferability caveats, never fake percentiles.</p></div>
+      <div class="fam-card"><span class="fam-ct">12</span><h4>Pharmacogenomics</h4><p>CYP2C19/2D6, warfarin, statins, HLA drug-reaction — a confirmed drug response is a real-world functional phenotype.</p></div>
+      <div class="fam-card star"><span class="fam-ct">10</span><h4>Rare-variant &amp; clinical (WGS)</h4><p>Personal VUS report, BRCA/Lynch, novel-variant flagging — the WGS tier where actual rare VUS live and get discovered.</p></div>
+      <div class="fam-card"><span class="fam-ct">8</span><h4>Nutrigenomics &amp; metabolism</h4><p>Vitamin D, B12/folate, iron, caffeine — biomarker self-report becomes a quantitative genotype↔phenotype signal.</p></div>
+      <div class="fam-card"><span class="fam-ct">5</span><h4>Athletic &amp; physical</h4><p>ACTN3 power/endurance, VO2max, injury lean — self-reported athletic phenotype at scale.</p></div>
+      <div class="fam-card"><span class="fam-ct">5</span><h4>Cognitive &amp; behavioral</h4><p>Chronotype, caffeine-sleep. Heavily caveated (directional / speculative), exposed-bands only.</p></div>
+      <div class="fam-card"><span class="fam-ct">5</span><h4>Immune, HLA &amp; infectious-disease</h4><p>HLA typing, CCR5-Δ32, secretor status — very ancestry-variable HLA frequencies + disease/drug associations.</p></div>
+      <div class="fam-card star"><span class="fam-ct">5</span><h4>Uniqueness, fingerprint &amp; network-meta</h4><p>Rarity score, genome sonification, kinship matching — grows the network and unlocks family co-segregation (PP1/BS4).</p></div>
+    </div>
+
+    <div class="sec-head reveal" style="margin:52px 0 30px">
+      <span class="eyebrow">Top 20 · build-these-first</span>
+      <h2 style="font-size:clamp(22px,3vw,30px)">The highest-value skills, ranked.</h2>
+      <p>Ranked by user value × feasibility × VUS-yield. <span class="proto-key">✓ prototyped</span> marks skills already running in the sandbox. Each pairs an insight for you with its contribution to resolving uncertain variants.</p>
+    </div>
+
+    <div class="skill-grid reveal" id="skillGrid">
+      <!-- rendered statically for SEO + resilience; the same list is served at /api/status → capabilities.top -->
+    </div>
+    <p class="src-note reveal" style="margin-top:24px">Full 110-skill catalogue and evidence mapping available to members and in the design docs. Skills are labelled <span class="mono">solid</span> / <span class="mono">directional</span> / <span class="mono">speculative</span> for honesty.</p>
+  </div>
+</section>
+
+<!-- ══ HOW IT WORKS · TRUST (FEDERATED) ══ -->
+<section id="federated" class="demo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How it works · the trust model <span id="flLiveBadge"></span></span>
+      <h2>Collective intelligence, without pooling DNA.</h2>
+      <p>Better genomics needs more data — but nobody should have to hand over their genome to get it. SovereignDNA computes an update <strong>locally</strong>, differential privacy noises it, secure aggregation masks it, and only the combined, DP-noised aggregate is ever revealed. This is not slideware: a real multi-node round already runs on managed infrastructure and provably refuses to leak.</p>
+    </div>
+
+    <div class="fed-grid reveal">
+      <div class="fed-card">
+        <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--helix-1)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg> The boundary rule</h4>
+        <p>Raw DNA never leaves your device — <strong>only DP-noised aggregates cross the boundary</strong>. A "clear gradient" update is refused at the device boundary. In the live network, that refusal probe passed.</p>
+      </div>
+      <div class="fed-card">
+        <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--helix-2)" stroke-width="2"><path d="M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10M4 17h16M9 21h6"/></svg> Differential privacy</h4>
+        <p>A Rényi <span class="mono">(ε, δ)</span> accountant bounds each contribution: gradients are L2-clipped and Gaussian noise is added before anything is shared, with a tracked, provable privacy budget.</p>
+      </div>
+      <div class="fed-card">
+        <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--helix-3)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg> Secure aggregation</h4>
+        <p>Bonawitz pairwise additive masking means no party — not even the coordinator — sees any single device's update. The masks cancel exactly, leaving only a DP-noised sum.</p>
+      </div>
+      <div class="fed-card">
+        <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" stroke-width="2"><path d="m3 11 18-5v12L3 13v-2zM11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg> Live on GKE</h4>
+        <p>A real 3-node round ran on <strong>GKE Autopilot</strong> on Jul 17, 2026 — the aggregator reported <span class="mono">ROUND OK</span> with a DP-noised, secure-masked aggregate. Image <span class="mono">fl-node:0.1.1</span>, commit <span class="mono">72abe32</span>.</p>
+      </div>
+    </div>
+
+    <!-- Evidence ladder — the anti-overclaim spine -->
+    <div class="ladder reveal" aria-label="Evidence ladder L0 to L4">
+      <div class="ladder-head">
+        <h3>Candidate signal → evidence, one honest tier at a time</h3>
+        <p>Every network signal climbs an <strong>L0→L4 evidence ladder</strong>. These are <em>gates, not scores</em> — nothing skips a rung, and new evidence can send a candidate back down. Only L4 items are ever called a "proposed reclassification", and even then it's a <strong>submission to expert panels, never a verdict</strong>.</p>
+      </div>
+      <ol class="ladder-steps">
+        <li><span class="ls-no">L0</span><b>Candidate</b><span>A probe produced a signal, with full provenance. Nothing is believed yet.</span></li>
+        <li><span class="ls-no">L1</span><b>Consistent</b><span>Not a statistical artifact — power, multiple-testing, DP-noise floor all checked.</span></li>
+        <li><span class="ls-no">L2</span><b>Reproduced</b><span>Survives held-out cohorts and ancestry-stratified re-derivation.</span></li>
+        <li><span class="ls-no">L3</span><b>Code review</b><span>A multi-role panel agrees the signal meets a specific ACMG code threshold.</span></li>
+        <li><span class="ls-no">L4</span><b>Expert-ready</b><span>A dossier a qualified curator / ClinGen VCEP can act on — submitted, not decided.</span></li>
+      </ol>
+    </div>
+
+    <div class="fed-caveat reveal">
+      <strong>Honest status:</strong> the federated network runs on <strong>synthetic data only</strong> today. Phase-4 <em>production</em> with real genomes remains <strong>legally gated</strong> — it will not launch without a completed Data Protection Impact Assessment (DPIA), an independent privacy audit, and epsilon-budget sign-off. We are not claiming real-genome federated training is live, and functional (PS3/BS3) evidence is wet-lab only — the network cannot generate it.
+    </div>
+  </div>
+</section>
+
+<!-- ══ LIVE DEMO ══ -->
+<section id="demo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Live backend demo · Phase 1 (in review)</span>
       <h2>Streaming ingestion, in real time.</h2>
       <p>Whole-genome files run 1–100+ GB. The old importer loaded the entire file into RAM. We rebuilt it as a constant-memory stream: file → parser → SQLite, in bounded batches. Run it below — the payload streams live from this site's Cloudflare Worker (synthetic data).</p>
     </div>
@@ -157,32 +297,32 @@
   </div>
 </section>
 
-<!-- ══ PHASES (WHAT'S BUILT) ══ -->
+<!-- ══ WHAT'S BUILT (PHASES) ══ -->
 <section id="phases">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">What's built · Phases 1–4</span>
+      <span class="eyebrow">Built — in review · Phases 1–4</span>
       <h2>Real, reviewable progress — not a roadmap slide.</h2>
-      <p>All four grant phases are built and shipping as green, reviewable pull requests against the public repo. Each card links its PRs on <a href="https://github.com/abhilashi/sovereign-dna" target="_blank" rel="noopener" style="color:var(--helix-1)">abhilashi/sovereign-dna</a>.</p>
+      <p>The product is built across four grant phases, each opened as a green, reviewable pull request (#96–#114) against the public repo — all currently in review, none yet merged upstream. Each card links its PRs on <a href="https://github.com/abhilashi/sovereign-dna" target="_blank" rel="noopener" style="color:var(--helix-1)">abhilashi/sovereign-dna</a>.</p>
     </div>
     <div class="phase-built-grid">
 
       <div class="built-card reveal">
-        <div class="bc-head"><span class="bc-no">Phase 1</span><span class="bc-badge built">Built</span></div>
+        <div class="bc-head"><span class="bc-no">Phase 1</span><span class="bc-badge built">Built · in review</span></div>
         <h3>Universal formats &amp; streaming ingestion</h3>
         <p>Stream a whole genome (23andMe / AncestryDNA / VCF) → SQLite at a flat, size-independent peak-RAM via a <span class="mono">GenomeParser</span> streaming trait and 50k-row transactional batches. Local-first Tauri workbench.</p>
         <div class="pr-row"><a class="pr-chip" href="https://github.com/abhilashi/sovereign-dna/pull/96" target="_blank" rel="noopener">PR #96 · Streaming core <span class="st">● open</span></a></div>
       </div>
 
       <div class="built-card reveal">
-        <div class="bc-head"><span class="bc-no">Phase 2</span><span class="bc-badge built">Built</span></div>
+        <div class="bc-head"><span class="bc-no">Phase 2</span><span class="bc-badge built">Built · in review</span></div>
         <h3>Skills engine + WASM sandbox</h3>
         <p>Hardcoded analyses become signed skill manifests executed inside a <span class="mono">wasmi</span> WASM sandbox (empty linker → no network, no filesystem egress), distributed through a content-addressed skill registry.</p>
         <div class="pr-row"><a class="pr-chip" href="https://github.com/abhilashi/sovereign-dna/pull/108" target="_blank" rel="noopener">PR #108 · wasmi sandbox <span class="st">● open</span></a></div>
       </div>
 
       <div class="built-card reveal">
-        <div class="bc-head"><span class="bc-no">Phase 3</span><span class="bc-badge built">Built</span></div>
+        <div class="bc-head"><span class="bc-no">Phase 3</span><span class="bc-badge built">Built · in review</span></div>
         <h3>Consent &amp; privacy ledger</h3>
         <p>User-created agents plus an auditable consent / privacy ledger. <span class="mono">Egress::assert_public_only</span> refuses genotypes by construction; consent is revocable and gates every outbound action.</p>
         <div class="pr-row"><a class="pr-chip" href="https://github.com/abhilashi/sovereign-dna/pull/112" target="_blank" rel="noopener">PR #112 · Consent ledger <span class="st">● open</span></a></div>
@@ -218,42 +358,8 @@
   </div>
 </section>
 
-<!-- ══ FEDERATED (PHASE 4 HIGHLIGHT) ══ -->
-<section id="federated" class="demo">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Phase 4 · Federated learning <span id="flLiveBadge"></span></span>
-      <h2>Collective intelligence, without pooling DNA.</h2>
-      <p>Better genomics needs more data — but nobody should have to hand over their genome to get it. SovereignDNA trains shared models with <strong>federated learning</strong>: your device computes an update locally, differential privacy noises it, secure aggregation masks it, and only the combined, DP-noised aggregate is ever revealed.</p>
-    </div>
-
-    <div class="fed-grid reveal">
-      <div class="fed-card">
-        <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--helix-1)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg> The boundary rule</h4>
-        <p>Raw DNA never leaves your device — <strong>only DP-noised aggregates cross the boundary</strong>. A "clear gradient" update is refused at the device boundary. In the live network, that refusal probe passed.</p>
-      </div>
-      <div class="fed-card">
-        <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--helix-2)" stroke-width="2"><path d="M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10M4 17h16M9 21h6"/></svg> Differential privacy</h4>
-        <p>A Rényi <span class="mono">(ε, δ)</span> accountant bounds each contribution: gradients are L2-clipped and Gaussian noise is added before anything is shared, with a tracked, provable privacy budget.</p>
-      </div>
-      <div class="fed-card">
-        <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--helix-3)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg> Secure aggregation</h4>
-        <p>Bonawitz pairwise additive masking means no party — not even the coordinator — sees any single device's update. The masks cancel exactly, leaving only a DP-noised sum.</p>
-      </div>
-      <div class="fed-card">
-        <h4><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ember)" stroke-width="2"><path d="m3 11 18-5v12L3 13v-2zM11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg> Live on GKE</h4>
-        <p>A real 3-node round ran on <strong>GKE Autopilot</strong> on Jul 17, 2026 — aggregator reported <span class="mono">ROUND OK</span> with a DP-noised, secure-masked aggregate. Image <span class="mono">fl-node:0.1.1</span>, commit <span class="mono">72abe32</span>.</p>
-      </div>
-    </div>
-
-    <div class="fed-caveat reveal">
-      <strong>Honest status:</strong> the federated network runs on <strong>synthetic data only</strong> today. Phase-4 <em>production</em> with real genomes remains <strong>legally gated</strong> — it will not launch without a completed Data Protection Impact Assessment (DPIA), an independent privacy audit, and epsilon-budget sign-off. We are not claiming real-genome federated training is live.
-    </div>
-  </div>
-</section>
-
 <!-- ══ PRIVACY LEDGER ══ -->
-<section id="privacy">
+<section id="privacy" class="demo">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Privacy ledger</span>
@@ -271,48 +377,48 @@
   </div>
 </section>
 
-<!-- ══ ROADMAP ══ -->
+<!-- ══ ROADMAP — WHERE IT'S GOING ══ -->
 <section id="roadmap">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Grant roadmap · milestone-gated $BEAST</span>
-      <h2>Four phases, released against evidence.</h2>
-      <p>Each tranche is paid in $BEAST against independently verifiable milestones. All four phases are built; the real-genome federated deployment ships only after threat modeling, a DPIA, and a third-party privacy audit.</p>
+      <span class="eyebrow">Where it's going · milestone-gated $BEAST</span>
+      <h2>From a workbench to a VUS-resolution engine.</h2>
+      <p>The four grant phases are built. Next, the roadmap re-aims that engine at the North Star: turn every skill into a privacy-preserving VUS probe, prove the network is <em>calibrated</em> on already-resolved variants, then — only behind the legal gate — pilot on real genomes. Each step follows the same discipline: feature-flagged off by default, synthetic data only, until sign-off.</p>
     </div>
     <div class="roadmap">
       <div class="phase-card reveal">
-        <div class="no">PHASE 1 · BUILT</div>
-        <h3>Universal formats</h3>
-        <p>Streaming ingestion, broad consumer + sequencing formats, and a local-first workbench.</p>
-        <div class="tranche">Tranche 1 · Platform core</div>
+        <div class="no">BUILT · PHASES 1–4</div>
+        <h3>The engine</h3>
+        <p>Streaming ingest, WASM skill sandbox, consent ledger, and DP + secure-aggregation federated learning — live on synthetic data.</p>
+        <div class="tranche">Built · in review</div>
       </div>
       <div class="phase-card reveal">
-        <div class="no">PHASE 2 · BUILT</div>
-        <h3>DNA skills runtime</h3>
-        <p>Signed skill manifests in a wasmi WASM sandbox with evidence tiers, plus a content-addressed registry.</p>
-        <div class="tranche">Tranche 1 · Platform core</div>
+        <div class="no">NEXT · VUS PROBES</div>
+        <h3>Re-aim at VUS</h3>
+        <p>First probe = ancestry-bucketed allele frequency (powers BA1/BS1/PM2), then case-control association — same tested crypto, new payloads. Design target.</p>
+        <div class="tranche">Design target</div>
       </div>
       <div class="phase-card reveal">
-        <div class="no">PHASE 3 · BUILT</div>
-        <h3>User agents &amp; consent</h3>
-        <p>Local proactive research agents, revocable consent, and an auditable privacy ledger.</p>
-        <div class="tranche">Tranche 2 · User agents</div>
+        <div class="no">NEXT · CALIBRATION</div>
+        <h3>Earn trust</h3>
+        <p>Time-travel backtest on already-resolved ClinVar variants with proper scoring rules. Zero legal exposure, maximum credibility — the license to scale.</p>
+        <div class="tranche">Design target</div>
       </div>
       <div class="phase-card gated reveal">
-        <div class="no">PHASE 4 · LIVE (SYNTHETIC) · PROD GATED</div>
-        <h3>Federated collective intel</h3>
-        <p>DP + secure-aggregation federated learning — live on synthetic data. Real-genome production is gated on DPIA + independent audit + ε-budget sign-off.</p>
-        <div class="tranche">Tranche 3 · Audit-gated</div>
+        <div class="no">GATED · REAL GENOMES</div>
+        <h3>Real-genome pilot</h3>
+        <p>Only after DPIA + independent audit + ε-budget sign-off + IRB + a ClinGen/clinical partner for the L4 human gate. Candidates submitted as proposed evidence, never verdicts.</p>
+        <div class="tranche">Legally gated</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ══ ACCESS / SUPPORT ══ -->
-<section id="access">
+<section id="access" class="demo">
   <div class="wrap">
     <div class="cta-box reveal">
-      <span class="eyebrow">Get access · support the network</span>
+      <span class="eyebrow">Get access · support the mission</span>
       <h2>Back sovereign genomics.</h2>
       <p>SovereignDNA is free and open-source at its core. Membership funds the mission and unlocks priority early-access to new formats, skills and research agents. Checkout is handled by the live AllScale payment rails — pay by card, Apple&nbsp;Pay, Google&nbsp;Pay or crypto, settled in USDC.</p>
       <div class="hero-cta" style="justify-content:center">
@@ -330,7 +436,7 @@
     <div class="cta-box reveal">
       <span class="eyebrow">Early access</span>
       <h2>Own your genome. Join the private beta.</h2>
-      <p>Be first to run sovereign, on-device genomics. No spam, no data collection — just an email so we can invite you.</p>
+      <p>Be first to run sovereign, on-device genomics. No spam, no tracking — we store only your email so we can invite you.</p>
       <form class="wl-form" id="wlForm" novalidate>
         <input type="email" id="wlEmail" placeholder="you@email.com" aria-label="Email address" required />
         <select id="wlRole" aria-label="I am a…">
@@ -361,16 +467,16 @@
           </svg>
           <span>SovereignDNA</span>
         </a>
-        <p>A local-first, privacy-preserving DNA agent workbench. Your genome should be computable by agents without becoming someone else's cloud dataset.</p>
+        <p>The private genome agent you run locally — driving Variants of Unknown Significance toward zero, without your DNA ever leaving your device.</p>
       </div>
       <div class="foot-cols">
         <div class="foot-col">
           <h4>Product</h4>
-          <a href="#platform">Platform</a>
+          <a href="#mission">Mission</a>
+          <a href="#product">What it is</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#federated">How it works</a>
           <a href="#demo">Live demo</a>
-          <a href="#phases">Phases</a>
-          <a href="#federated">Federated</a>
-          <a href="#privacy">Privacy</a>
           <a href="/membership">Membership</a>
         </div>
         <div class="foot-col">
@@ -387,7 +493,7 @@
         </div>
       </div>
     </div>
-    <p class="disclaimer"><strong>Not medical advice.</strong> SovereignDNA is a wellness, research and education tool for user-controlled analysis. It does not provide medical diagnosis, treatment decisions, or clinical-grade claims. The federated network runs on synthetic data only; real-genome federated training is not live and remains legally gated. Demo figures on this page use synthetic, non-clinical sample data. Genetic information is sensitive — consult a qualified professional for health decisions.</p>
+    <p class="disclaimer"><strong>Not medical advice.</strong> SovereignDNA is a wellness, research and education tool for user-controlled analysis. It does not provide medical diagnosis, treatment decisions, or clinical-grade claims. Its network produces <strong>prioritized candidate evidence that feeds the formal ACMG/ClinGen reclassification pipeline — it does not perform or replace clinical interpretation</strong>, and it cannot generate functional (wet-lab) evidence. The federated network runs on synthetic data only; real-genome federated training is not live and remains legally gated. Demo and illustrative figures on this page use synthetic, non-clinical sample data. Genetic information is sensitive — consult a qualified professional for health decisions.</p>
     <p class="byline">SovereignDNA is built with <a href="https://thebeastagi.com" target="_blank" rel="noopener">The Beast</a> · payments secured by AllScale · milestone-gated $80K $BEAST grant · © 2026</p>
   </div>
 </footer>
